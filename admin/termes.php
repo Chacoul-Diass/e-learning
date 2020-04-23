@@ -10,7 +10,7 @@ if (isset($_GET['modifier_cat'])) {
         <details>
             <summary>Ajouter Nouveau T&C</summary>
             <form method="post" enctype="multipart/form-data">
-                <select name="for_whome">
+                <select name="pour_qui" required>
                     <option value="">Selctionner Terme Pour</option>
                     <option value="Etudiant">Etudiant</option>
                     <option value="Professeur">Professeur</option>
@@ -19,11 +19,11 @@ if (isset($_GET['modifier_cat'])) {
                 <center><button name="add_term">Ajouter T&C</button></center>
             </form>
         </details>
-        <table cellspacing="0">
+        <table style="width: 98%" cellspacing="0">
             <tr>
                 <th>N°</th>
                 <th>Termes</th>
-                <th>For Whome</th>
+                <th>Pour Qui</th>
                 <th>Action</th>
             </tr>
             <?php
@@ -34,5 +34,5 @@ if (isset($_GET['modifier_cat'])) {
     </div>
 
     <?php
-    echo add_cat();}
+    echo add_term();}
 ?>

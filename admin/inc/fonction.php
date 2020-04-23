@@ -325,4 +325,66 @@
             echo "<option value='".$row['cat_id']."'>".$row['cat_name']."</option>";
         endwhile;
     }
+
+    function add_term(){
+    include("inc/db.php");
+    if(isset($_POST['add_term'])) {
+        $cat_name=$_POST['term'];
+        $cat_id=$_POST['pour_qui'];
+
+        /** @var TYPE_NAME $con */
+        $check= $con->prepare("select * from term where term='$cat_name'");
+        $check->setFetchMode(PDO::FETCH_ASSOC);
+        $check->execute();
+        $count=$check->rowCount();
+
+        if($count==1){
+            echo"<script>alert('Terme Déjà Ajoutée')</script>";
+            echo"<script>window.open('index.php?termes','_self')</script>";
+        }else{
+            $add_sous_cat=$con->prepare("insert into term(term,pour_qui)values('$cat_name','$cat_id')");
+            if($add_sous_cat->execute()){
+                echo"<script>alert('Terme Ajoutée Avec Succès')</script>";
+                echo"<script>window.open('index.php?termes','_self')</script>";
+            } else {
+                echo"<script>alert('Terme Non Ajoutée )</script>";
+                echo"<script>window.open('index.php?termes','_self')</script>";
+            }
+        }
+    }
+}
+
+    function view_term(){
+        include("inc/db.php");
+        /** @var TYPE_NAME $con */
+        $get_c=$con->prepare("select * from term ");
+        $get_c->setFetchMode(PDO::FETCH_ASSOC);
+        $get_c->execute();
+        $i=1;
+        while($row=$get_c->fetch()):
+
+            echo "<tr>
+                        <td>".$i++."</td>
+                        <td>".$row['term']."</td>
+                        <td>".$row['pour_qui']."</td>
+                        <td>
+                            <a href='index.php?term&modifier_term=".$row['t_id']."' title='Modifier'><i class='far fa-edit'></i></a>
+                            <a style='color: #f00' href='index.php?term&supp_term=".$row['t_id']."' title='Supprimer'><i class='far fa-trash-alt'></i></a>
+                        </td>
+                      </tr>";
+            endwhile;
+
+        if(isset($_GET['supp_sous_cat'])){
+            $id=$_GET['supp_sous_cat'];
+
+            $supp=$con->prepare("delete  from sous_cat where sous_cat_id='$id'");
+            if ($supp->execute()){
+                echo "<script>alert('Sous-Catégorie Supprimée Avec Succès')</script>";
+                echo"<script>window.open('index.php?sous_cat','_self')</script>";
+            }else{
+                echo "<script>alert('Sous-Catégorie Non Supprimée Avec Succès')</script>";
+                echo"<script>window.open('index.php?sous_cat','_self')</script>";
+            }
+        }
+    }
 ?>

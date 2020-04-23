@@ -1,8 +1,8 @@
     <div id="bodyleft">
         <h3>Catégories</h3>
         <ul>
-            <li><a href="index.php"><i class='fas fa-home'></i> Tableau De Bord</a></li>
-            <li><a href="index.php?cat"><i class='fas fa-th'></i> Voir Categories</a></li>
+            <li><a href="index.php"><i class='fas fa-home'></i>Tableau De Bord</a></li>
+            <li><a href="index.php?cat"><i class='fas fa-th'></i>Voir Categories</a></li>
             <li><a href="index.php?sous_cat">Voir Sous-Categories</a></li>
             <li><a href="index.php?lang">Voir Langages</a></li>
         </ul>
