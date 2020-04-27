@@ -10,8 +10,8 @@
         <details>
             <summary>Ajouter Catégorie</summary>
             <form method="post" enctype="multipart/form-data">
-                <input type="text" name="lang_name" placeholder="Entrer le Nom de la Catégorie Ici"/>
-                <center><button name="add_lang">Ajouter Langage</button></center>
+                <input type="text" name="cat_name" placeholder="Entrer le Nom de la Catégorie Ici"/>
+                <center><button name="add_cat">Ajouter Catégorie</button></center>
             </form> 
         </details>
         <table cellspacing="0">

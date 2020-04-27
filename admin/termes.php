@@ -1,9 +1,9 @@
 <?php include("inc/db.php")?>
     <div id="bodyright">
 <?php
-if (isset($_GET['modifier_cat'])) {
-    echo modifier_cat();
-}else {
+    if (isset($_GET['modifier_term'])) {
+         echo modifier_term();
+    }else {
     ?>
     <h3>Toutes T&C</h3>
     <div id="add">

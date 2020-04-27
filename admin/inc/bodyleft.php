@@ -28,9 +28,9 @@
         <h3>Pages</h3>
         <ul>
             <li><a href="index.php?termes">Termes & Condition</a></li>
-            <li><a href="#">Contactez-nous</a></li>             
-            <li><a href="#">A Propos</a></li>
-            <li><a href="#">FAQs</a></li>
+            <li><a href="index.php?contact">Contactez-nous</a></li>
+            <li><a href="index.php?apropos">A Propos</a></li>
+            <li><a href="index.php?faqs">FAQs Page</a></li>
             <li><a href="#">Edition</a></li>
         </ul>
     </div>
@@ -47,6 +47,15 @@
     }
     if(isset($_GET['termes'])){
         include("termes.php");
+    }
+    if(isset($_GET['contact'])){
+        include("contact.php");
+    }
+    if(isset($_GET['faqs'])){
+        include("faqs.php");
+    }
+    if(isset($_GET['apropos'])){
+        include("apropos.php");
     }
 ?>
 

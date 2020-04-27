@@ -354,6 +354,46 @@
     }
 }
 
+    function modifier_term(){
+        include("inc/db.php");
+        if(isset($_GET['modifier_term'])) {
+                $id=$_GET['modifier_term'];
+
+                /** @var TYPE_NAME $con */
+                $get_cat=$con->prepare("select * from term where t_id='$id'");
+                $get_cat->setFetchMode(PDO::FETCH_ASSOC);
+                $get_cat->execute();
+                $row=$get_cat->fetch();
+
+                echo "<h3>Modifier T&C</h3>
+                        <form id='modifier_form' method='post' enctype='multipart/form-data'>
+                            <select name='pour_qui'>
+                                <option value='".$row['pour_qui']."'>".$row['pour_qui']."</option>
+                                <option value='Etudiant'>Etudiant</option>
+                                <option value='Professeur'>Professeur</option>";
+                echo"</select>    
+                            <input type='text' name='term' value='".$row['term']."' placeholder='Entrer le Nom de la Catégorie Ici'/>
+                            <center><button name='modifier_t'>Modifier T&C</button></center>
+                        </form>";
+
+                if (isset($_POST['modifier_t'])){
+                    $cat_name=$_POST['term'];
+                    $cat_id=$_POST['pour_qui'];
+
+
+                    $up=$con->prepare("update term set term='$cat_name',pour_qui='$cat_id' where t_id='$id'");
+                    if($up->execute()){
+                        echo"<script>alert('Terme Modifié Avec Succès')</script>";
+                        echo"<script>window.open('index.php?termes','_self')</script>";
+                    } else {
+                        echo"<script>alert('Terme Non Modifié)</script>";
+                        echo"<script>window.open('index.php?termes','_self')</script>";
+                    }
+
+                }
+            }
+    }
+
     function view_term(){
         include("inc/db.php");
         /** @var TYPE_NAME $con */
@@ -368,23 +408,187 @@
                         <td>".$row['term']."</td>
                         <td>".$row['pour_qui']."</td>
                         <td>
-                            <a href='index.php?term&modifier_term=".$row['t_id']."' title='Modifier'><i class='far fa-edit'></i></a>
-                            <a style='color: #f00' href='index.php?term&supp_term=".$row['t_id']."' title='Supprimer'><i class='far fa-trash-alt'></i></a>
+                            <a href='index.php?termes&modifier_term=".$row['t_id']."' title='Modifier'><i class='far fa-edit'></i></a>
+                            <a style='color: #f00' href='index.php?termes&supp_term=".$row['t_id']."' title='Supprimer'><i class='far fa-trash-alt'></i></a>
                         </td>
                       </tr>";
             endwhile;
 
-        if(isset($_GET['supp_sous_cat'])){
-            $id=$_GET['supp_sous_cat'];
+        if(isset($_GET['supp_term'])){
+            $id=$_GET['supp_term'];
 
-            $supp=$con->prepare("delete  from sous_cat where sous_cat_id='$id'");
+            $supp=$con->prepare("delete  from term where t_id='$id'");
             if ($supp->execute()){
-                echo "<script>alert('Sous-Catégorie Supprimée Avec Succès')</script>";
-                echo"<script>window.open('index.php?sous_cat','_self')</script>";
+                echo "<script>alert('Terme Supprimé Avec Succès')</script>";
+                echo"<script>window.open('index.php?termes','_self')</script>";
             }else{
-                echo "<script>alert('Sous-Catégorie Non Supprimée Avec Succès')</script>";
-                echo"<script>window.open('index.php?sous_cat','_self')</script>";
+                echo "<script>alert('Terme Non Supprimé Avec Succès')</script>";
+                echo"<script>window.open('index.php?termes','_self')</script>";
             }
         }
     }
+
+    function contact(){
+        include("inc/db.php");
+        /** @var TYPE_NAME $con */
+        $get_con=$con->prepare("select * from contact");
+        $get_con->setFetchMode(PDO::FETCH_ASSOC);
+        $get_con->execute();
+        $row=$get_con->fetch();
+
+        echo "<form method='post'enctype='multipart/form-data'>
+                    <table>
+                        <tr>
+                            <td>Update Contact No.</td>
+                            <td><input type='tel' value='".$row['tel']."' name='tel' /></td>
+                        </tr>
+                        <tr>
+                            <td>Update Email</td>
+                            <td><input type='email'value='".$row['email']."'  name='email' /></td>
+                        </tr>
+                        <tr>
+                            <td>Update Office Address Line 1</td>
+                            <td><input type='text' value='".$row['add1']."'  name='add1' /></td>
+                        </tr>
+                        <tr>
+                            <td>Update Office Address Line 2</td>
+                            <td><input type'text' value='".$row['add2']."'  name='add2' /></td>
+                        </tr>
+                        <tr>
+                            <td>http://youtube.com/</td>
+                            <td><input type='text'  value='".$row['yt']."' name='yt' /></td>
+                        </tr>
+                        <tr>
+                            <td>http://facebook.com/</td>
+                            <td><input type='text' value='".$row['fb']."'  name='fb' /></td>
+                        </tr>
+                        <tr>
+                            <td>http://plus.google.com/</td>
+                            <td><input type='text' value='".$row['gp']."'  name='gp' /></td>
+                        </tr>
+                        <tr>
+                            <td>http://twitter.com</td>
+                            <td><input type='text' value='".$row['tw']."'  name='tw' /></td>
+                        </tr>
+                        <tr>
+                            <td>http://linkedin.com</td>
+                            <td><input type='text' value='".$row['link']."'  name='ln' /></td>
+                        </tr>
+                    </table>
+                    <center><button name='up_con'>Sauvegarder</button></center>
+             </form>";
+        // mise-a-jour
+            if (isset($_POST['up_con'])){
+                $tel=$_POST['tel'];
+                $email=$_POST['email'];
+                $add1=$_POST['add1'];
+                $add2=$_POST['add2'];
+                $yt=$_POST['yt'];
+                $fb=$_POST['fb'];
+                $gp=$_POST['gp'];
+                $tw=$_POST['tw'];
+                $ln=$_POST['ln'];
+
+                $up=$con->prepare("update contact set tel='$tel', email='$email', add1='$add1', add2='$add2', yt='$yt', fb='$fb', gp='$gp', tw='$tw', link='$ln'");
+                if($up->execute()){
+                    echo "<script>window.open('index.php?contact','_self')</script>";
+                }
+            }
+    }
+
+    function add_faqs(){
+    include("inc/db.php");
+    if(isset($_POST['add_faqs'])) {
+        $qsn=$_POST['qsn'];
+        $rep=$_POST['rep'];
+
+        /** @var TYPE_NAME $con */
+        $check= $con->prepare("select * from faqs where qsn='qsn'");
+        $check->setFetchMode(PDO::FETCH_ASSOC);
+        $check->execute();
+        $count=$check->rowCount();
+
+        if($count==1){
+            echo"<script>alert('FAQs Déjà Ajoutée')</script>";
+            echo"<script>window.open('index.php?faqs','_self')</script>";
+        }else{
+            $add_cat=$con->prepare("insert into faqs(qsn,rep)values('$qsn','$rep')");
+            if($add_cat->execute()){
+                echo"<script>alert('FAQs Ajoutée Avec Succès')</script>";
+                echo"<script>window.open('index.php?faqs','_self')</script>";
+            } else {
+                echo"<script>alert('FAQs Non Ajoutée)</script>";
+                echo"<script>window.open('index.php?faqs','_self')</script>";
+            }
+        }
+    }
+}
+
+    function view_faqs(){
+        include ("inc/db.php");
+        /** @var TYPE_NAME $con */
+        $get_faqs=$con->prepare("select * from faqs");
+        $get_faqs->setFetchMode(PDO::FETCH_ASSOC);
+        $get_faqs->execute();
+        while ($row=$get_faqs->fetch()):
+            echo"
+                <details>
+                    <summary>".$row['qsn']."</summary>
+                    <form method='post' enctype='multipart/form-data'>
+                        <input type='text' name='up_qsn' value='".$row['qsn']."' placeholder='Entrer La Question Ici'/>
+                        <input type='hidden' name='id' value='".$row['q_id']."' />
+                        <textarea name='up_rep' placeholder='Entrer Votre Reponse Ici'>".$row['rep']."</textarea>
+                        <center><button name='up_faqs'>Mettre A Jour FAQs</button></center>
+                    </form>
+                </details><br/>";
+        endwhile;
+
+        if(isset($_POST['up_faqs'])) {
+            $qsn=$_POST['up_qsn'];
+            $rep=$_POST['up_rep'];
+            $id=$_POST['id'];
+            /** @var TYPE_NAME $con */
+
+            $up_faq=$con->prepare("update faqs set qsn='$qsn', rep='$rep' where q_id='$id'");
+            if($up_faq->execute()){
+                echo"<script>alert('FAQs Mise A Jour Avec Succès')</script>";
+                echo"<script>window.open('index.php?faqs','_self')</script>";
+            } else {
+                echo"<script>alert('FAQs Non Mise A Jour)</script>";
+                echo"<script>window.open('index.php?faqs','_self')</script>";
+            }
+        }
+
+    }
+
+    function apropos(){
+        include ("inc/db.php");
+        /** @var TYPE_NAME $con */
+        $apropos=$con->prepare("select * from apropos");
+        $apropos->setFetchMode(PDO::FETCH_ASSOC);
+        $apropos->execute();
+        $row=$apropos->fetch();
+
+        echo"
+            <form method='post'>
+                <textarea name='apropos'>".$row['apropos']."</textarea>
+                <button name='up_apropos'>Sauvegarder</button>
+            </form>";
+        if(isset($_POST['up_apropos'])){
+            $info=$_POST['apropos'];
+
+            $up_apropos=$con->prepare("update apropos set apropos='$info'");
+            if ($up_apropos->execute()){
+                echo"<script>window.open('index.php?apropos','_self')</script>";
+            } else {
+                echo"<script>alert('Info Non Mise A Jour)</script>";
+                echo"<script>window.open('index.php?apropos','_self')</script>";
+            }
+
+        }
+    }
+
+
+
+
 ?>
