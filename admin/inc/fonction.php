@@ -439,19 +439,19 @@
         echo "<form method='post'enctype='multipart/form-data'>
                     <table>
                         <tr>
-                            <td>Update Contact No.</td>
+                            <td>Contact</td>
                             <td><input type='tel' value='".$row['tel']."' name='tel' /></td>
                         </tr>
                         <tr>
-                            <td>Update Email</td>
+                            <td>Email</td>
                             <td><input type='email'value='".$row['email']."'  name='email' /></td>
                         </tr>
                         <tr>
-                            <td>Update Office Address Line 1</td>
+                            <td>Adresse 1</td>
                             <td><input type='text' value='".$row['add1']."'  name='add1' /></td>
                         </tr>
                         <tr>
-                            <td>Update Office Address Line 2</td>
+                            <td>Address 2</td>
                             <td><input type'text' value='".$row['add2']."'  name='add2' /></td>
                         </tr>
                         <tr>
@@ -575,9 +575,13 @@
                 <button name='up_apropos'>Sauvegarder</button>
             </form>";
         if(isset($_POST['up_apropos'])){
+            //var_dump($_POST);
             $info=$_POST['apropos'];
 
+
             $up_apropos=$con->prepare("update apropos set apropos='$info'");
+            //var_dump($up_apropos);
+
             if ($up_apropos->execute()){
                 echo"<script>window.open('index.php?apropos','_self')</script>";
             } else {
