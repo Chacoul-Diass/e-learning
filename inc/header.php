@@ -1,24 +1,6 @@
 <div id="header">
     <div id="up_head">
-        <div id="lien">
-            <ul>
-                <li>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-google-plus"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                </li>
-                <li>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                </li>
-            </ul>
-        </div>
+        
         <div id="date">
             <p>
                 <?php
@@ -52,53 +34,81 @@
     <div id="head_panier">
         <a href="panier.php"><i class="fas fa-shopping-cart"></i> <span>0</span></a>
     </div>
-    <div id="head_connexion">
-        <h4><i class="fas fa-user"></i> Connexion</h4>
-        <form method="post">
-            <center>
-                <h3><i class="fas fa-user"></i></h3>
-                <h4>Connexion</h4>
-            </center>
-            <div id="input_f">
-                <i class="fas fa-envelope"></i>
-                <input type="text" name="u_email" placeholder="Entrer Votre Adresse Mail">
+
+    <!-- -------------------------------------    CHACOUL DEBUT    -------------------------------------------- -->
+    <div class="bouton">
+        <button class="" onclick="document.getElementById('id02').style.display='block'" style="width:auto;" href="./pages/signup.php">Connexion</button>
+        <button class="" onclick="document.getElementById('id02').style.display='block'" style="width:auto;" href="./pages/signup.php">Inscription</button>
+    </div>
+    
+    <!-- Connexion -->
+    <div class="name-user">
+
+        <div id="id01" class="modal">    
+        <form class="modal-content animate" action="#" method="post">
+
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="./imgs/img_avatar.png" alt="Avatar" class="avatar" style="width: 150px; height: 150px;">
             </div>
-            <div id="input_f">
-                <i class="fas fa-lock"></i>
-                <input type="password" name="u_pass" placeholder="Entrer Votre Mot De Passe">
+
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                
+                <button type="submit">Login</button>
+                <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
             </div>
-            <h5>Mot De Passe Oublié ?</h5><br clear="all">
-            <center><button name="connexion">Connexion</button></center>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+
         </form>
     </div>
-    <div id="head_sinscrire">
-        <h4><i class="fas fa-user-plus"></i> S'inscrire</h4>
-        <form method="post">
-            <center>
-                <h3><i class="fas fa-user-plus"></i></h3>
-                <h4>S'inscrire</h4>
-            </center>
-            <div id="input_f">
-                <i class="fas fa-user"></i>
-                <input type="text" name="s_nom" placeholder="Entrer Votre Nom">
+
+    <!--  Partie Inscription -->
+    <div class="name-user">
+
+        <div id="id02" class="modal">    
+        <form class="modal-content animate" action="#" method="post">
+
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="./imgs/img_avatar.png" alt="Avatar" class="avatar" style="width: 150px; height: 150px;">
             </div>
-            <div id="input_f">
-                <i class="fas fa-envelope"></i>
-                <input type="text" name="s_email" placeholder="Entrer Votre Adresse Mail">
+
+            <div class="container">
+                <h1>INSCRIPTION</h1>
+                <p>Veuillez remplir ce formulaire pour créer un compte.</p>
+                <hr>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                <hr>
+                <p>By creating an account you agree to our <a href="pages/regle.php">Terms & Privacy</a>.</p>
+                
+                <button type="submit">S'inscrire</button>
             </div>
-            <div id="input_f">
-                <i class="fas fa-phone"></i>
-                <input type="text" name="s_tel" placeholder="Entrer Votre N° De Téléphone">
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
-            <div id="input_f">
-                <i class="fas fa-lock"></i>
-                <input type="password" name="s_pass1" placeholder="Entrer Votre Mot De Passe">
-            </div>
-            <div id="input_f">
-                <i class="fas fa-lock"></i>
-                <input type="password" name="s_pass2" placeholder="Réentrer Votre Mot De Passe">
-            </div>
-            <center><button name="s_sinscrire">S'inscrire</button></center>
+
         </form>
     </div>
+<!-- -------------------------------------    CHACOUL FIN    -------------------------------------------- -->
+
 </div>
