@@ -10,8 +10,13 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 .container button {
   background-color: blue;
+=======
+button {
+  background-color: #3f5267; /*#4CAF50*/
+>>>>>>> 8a216286c37d84d97ec2e1edeff2254ce05e3212
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -19,15 +24,25 @@ input[type=text], input[type=password] {
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
+<<<<<<< HEAD
   margin-right: 10%;
 }
 
 .container button:hover {
+=======
+}
+
+button:hover {
+>>>>>>> 8a216286c37d84d97ec2e1edeff2254ce05e3212
   opacity: 0.8;
 }
 
 /* Extra styles for the cancel button */
+<<<<<<< HEAD
 .container .cancelbtn {
+=======
+.cancelbtn {
+>>>>>>> 8a216286c37d84d97ec2e1edeff2254ce05e3212
   width: auto;
   padding: 10px 18px;
   background-color: #f44336;
@@ -49,7 +64,11 @@ img.avatar {
   padding: 16px;
 }
 
+<<<<<<< HEAD
 .container span.psw {
+=======
+span.psw {
+>>>>>>> 8a216286c37d84d97ec2e1edeff2254ce05e3212
   float: right;
   padding-top: 16px;
 }
@@ -120,6 +139,7 @@ img.avatar {
   }
 }
 
+<<<<<<< HEAD
 /* New css */
 
 .bouton_login{
@@ -171,6 +191,15 @@ img.avatar {
 .bouton_signin button:hover {
   opacity: 0.8;
 }
+=======
+#boom {
+  text-align: center;
+
+}
+
+
+/* New css */
+>>>>>>> 8a216286c37d84d97ec2e1edeff2254ce05e3212
 
 
 
