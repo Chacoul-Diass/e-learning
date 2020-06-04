@@ -5,6 +5,8 @@
         <title>E Learning | Home</title>
         <link rel="stylesheet" href="css/style.css" />
         <script src="https://kit.fontawesome.com/f481d2cc97.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="css/styles_signin_and_signup.css">
+        <script type="text/javascript" src="javascript/js_signin_and_signup.js"></script>
     </head>
 
     <body>
