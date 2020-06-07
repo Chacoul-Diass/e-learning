@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset "utf-8" />
-        <title>E Learning | Home</title>
-        <link rel="stylesheet" href="./css/styles.css" />
-        <script src="https://kit.fontawesome.com/f481d2cc97.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="css/styles_signin_and_signup.css">
-        <script type="text/javascript" src="javascript/js_signin_and_signup.js"></script>
-    </head>
-
-    <body><div id="header">
+<div id="header">
     <div id="up_head">
         
         <div id="date">
@@ -32,7 +21,7 @@
         <h2>
             <i class="fas fa-bars"></i>
             <?php
-                include("cat_menu.php");
+                include("inc/cat_menu.php");
             ?>
         </h2>
     </div>
@@ -47,15 +36,79 @@
     </div>
 
     <!-- -------------------------------------    CHACOUL DEBUT    -------------------------------------------- -->
+    <div class="bouton">
+        <button class="" onclick="document.getElementById('id02').style.display='block'" style="width:auto;" href="./pages/signup.php">Connexion</button>
+        <button class="" onclick="document.getElementById('id02').style.display='block'" style="width:auto;" href="./pages/signup.php">Inscription</button>
+    </div>
+    
+    <!-- Connexion -->
+    <div class="name-user">
 
-    <div class="topnav">
-        <a class="fas fa-user" href="./sign_in/login.php">Connexion</a>  
-    </div>  
+        <div id="id01" class="modal">    
+        <form class="modal-content animate" action="#" method="post">
 
-    <div class="topnav2">
-        <a class="fas fa-user-plus" href="./sign_up/signup.php">S'inscrire</a>  
-    </div> 
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="./imgs/img_avatar.png" alt="Avatar" class="avatar" style="width: 150px; height: 150px;">
+            </div>
 
-    <!-- -------------------------------------    CHACOUL FIN    -------------------------------------------- -->
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+                
+                <button type="submit">Login</button>
+                <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+
+        </form>
+    </div>
+
+    <!--  Partie Inscription -->
+    <div class="name-user">
+
+        <div id="id02" class="modal">    
+        <form class="modal-content animate" action="#" method="post">
+
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <img src="./imgs/img_avatar.png" alt="Avatar" class="avatar" style="width: 150px; height: 150px;">
+            </div>
+
+            <div class="container">
+                <h1>INSCRIPTION</h1>
+                <p>Veuillez remplir ce formulaire pour créer un compte.</p>
+                <hr>
+                <label for="email"><b>Email</b></label>
+                <input type="text" placeholder="Enter Email" name="email" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+                <hr>
+                <p>By creating an account you agree to our <a href="pages/regle.php">Terms & Privacy</a>.</p>
+                
+                <button type="submit">S'inscrire</button>
+            </div>
+
+            <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+
+        </form>
+    </div>
+<!-- -------------------------------------    CHACOUL FIN    -------------------------------------------- -->
 
 </div>
