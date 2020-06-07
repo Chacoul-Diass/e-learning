@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -49,11 +50,11 @@
     <!-- -------------------------------------    CHACOUL DEBUT    -------------------------------------------- -->
 
     <div class="topnav">
-        <a class="fas fa-user" href="./sign_in/login.php">Connexion</a>  
+        <a class="fas fa-user" href="./user/login.php">Connexion</a>  
     </div>  
 
     <div class="topnav2">
-        <a class="fas fa-user-plus" href="./sign_up/signup.php">S'inscrire</a>  
+        <a class="fas fa-user-plus" href="./user/signup.php">S'inscrire</a>  
     </div> 
 
     <!-- -------------------------------------    CHACOUL FIN    -------------------------------------------- -->
