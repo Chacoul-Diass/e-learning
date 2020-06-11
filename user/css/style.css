@@ -29,11 +29,19 @@
     float: left; 
 }
 
+<<<<<<< HEAD
 #title h2, h3{
     color: #fff;
     text-align: center;
     text-shadow: 3px 3px 3px #000;
     line-height: 40px;  
+=======
+#title h2{
+    color: #fff;
+    text-align: center;
+    text-shadow: 3px 3px 3px #000;
+    line-height: 60px;  
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
 }
 
 #link{
@@ -339,6 +347,7 @@
     color: #fff;
 }
 
+<<<<<<< HEAD
 .topnav a {
     float: left;
     color: #f2f2f2;
@@ -382,6 +391,9 @@
     color:#3f5267;
   }
   
+=======
+
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
 
 
 

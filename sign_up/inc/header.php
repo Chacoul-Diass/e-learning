@@ -5,7 +5,10 @@
         <meta charset "utf-8" />
         <title>E Learning | Home</title>
         <link rel="stylesheet" href="./css/styles.css" />
+<<<<<<< HEAD
         <link rel="stylesheet" href="./css/signup.css">
+=======
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
         <script src="https://kit.fontawesome.com/f481d2cc97.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="css/styles_signin_and_signup.css">
         <script type="text/javascript" src="javascript/js_signin_and_signup.js"></script>
@@ -28,7 +31,11 @@
         </div>
     </div>
     <div id="titre">
+<<<<<<< HEAD
         <h2><a href="../index.php">E Learning</a></h2>
+=======
+        <h2><a href="index.php">E Learning</a></h2>
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
     </div>
     <div id="menu">
         <h2>
@@ -51,12 +58,21 @@
     <!-- -------------------------------------    CHACOUL DEBUT    -------------------------------------------- -->
 
     <div class="topnav">
+<<<<<<< HEAD
         <a class="fas fa-user" href="../sign_in/login.php">Connexion</a>  
     </div>  
 
     <!-- <div class="topnav2">
         <a class="fas fa-user-plus" href="./user/signup.php">S'inscrire</a>  
     </div>  -->
+=======
+        <a class="fas fa-user" href="./user/login.php">Connexion</a>  
+    </div>  
+
+    <div class="topnav2">
+        <a class="fas fa-user-plus" href="./user/signup.php">S'inscrire</a>  
+    </div> 
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
 
     <!-- -------------------------------------    CHACOUL FIN    -------------------------------------------- -->
 

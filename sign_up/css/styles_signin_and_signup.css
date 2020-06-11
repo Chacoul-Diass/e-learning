@@ -143,7 +143,11 @@ img.avatar {
   text-decoration: none;
   font-size: 17px;
   margin-right: 60px;
+<<<<<<< HEAD
   margin-left: -5px;
+=======
+  margin-left: 10px;
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
 }
 
 .topnav a:hover {
@@ -173,7 +177,10 @@ img.avatar {
   text-decoration: none;
   font-size: 17px;
   margin-right: 60px;
+<<<<<<< HEAD
   margin-left: -5px;
+=======
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
 }
 
 .topnav2 a:hover {

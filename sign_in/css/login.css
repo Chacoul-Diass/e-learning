@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+body{
+    margin: 0;
+    padding: 0;
+    background: url('./imgs/1.png');
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
 .signin{
     width: 320px;
     height: 420px;
@@ -11,8 +23,11 @@
     padding: 70px 30px;
     margin-left: 50%;
     margin-top: 30%;
+<<<<<<< HEAD
     opacity: 0.8;
     border-radius: 10px;
+=======
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
 }
 
 .avatar{
@@ -29,7 +44,10 @@ h1{
     padding: 0 0 20px;
     text-align: center;
     font-size: 22px;
+<<<<<<< HEAD
     text-decoration: underline;
+=======
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
 }
 
 .signin p {
@@ -43,7 +61,11 @@ h1{
     margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 .signin input[type="email"], input[type="password"]{
+=======
+.signin input[type="text"], input[type="password"]{
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
     border: none;
     border-bottom: 1px solid #fff;
     background: transparent;

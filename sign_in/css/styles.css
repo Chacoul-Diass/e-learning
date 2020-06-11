@@ -8,6 +8,7 @@
 }
 
 body{
+<<<<<<< HEAD
     
     margin: 0;
     padding: 0;
@@ -15,6 +16,9 @@ body{
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
+=======
+    background: #e6e6e6;
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
 }
 
 #header{
@@ -232,8 +236,11 @@ body{
     line-height: 60px;
 }
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
 #head_panier a span{
     font-size: 16px;
 }
@@ -582,8 +589,13 @@ body{
     padding: 20px 12px;
     text-decoration: none;
     font-size: 17px;
+<<<<<<< HEAD
     margin-right: 70px;
     margin-left: -5px;
+=======
+    margin-right: 60px;
+    margin-left: 10px;
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
   }
   
   .topnav a:hover {
@@ -613,7 +625,10 @@ body{
     text-decoration: none;
     font-size: 17px;
     margin-right: 60px;
+<<<<<<< HEAD
     margin-left: -5px;
+=======
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
   }
   
   .topnav2 a:hover {

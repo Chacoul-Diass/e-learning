@@ -50,9 +50,15 @@
 
         <!-- -------------------------------------    CHACOUL DEBUT    -------------------------------------------- -->
 
+<<<<<<< HEAD
         <!-- <div class="topnav">
             <a class="fas fa-user" href="#">Connexion</a>  
         </div>   -->
+=======
+        <div class="topnav">
+            <a class="fas fa-user" href="#">Connexion</a>  
+        </div>  
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
 
         <div class="topnav2">
             <a class="fas fa-user-plus" href="../sign_up/signup.php">S'inscrire</a>

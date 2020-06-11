@@ -10,8 +10,23 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
+<<<<<<< HEAD
 .container button {
   background-color: blue;
+=======
+<<<<<<< HEAD
+.container button {
+  background-color: blue;
+=======
+<<<<<<< HEAD
+.container button {
+  background-color: blue;
+=======
+button {
+  background-color: #3f5267; /*#4CAF50*/
+>>>>>>> 8a216286c37d84d97ec2e1edeff2254ce05e3212
+>>>>>>> 5e9a67c39241182cdfba8d4939e4a1f5366716ef
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -19,15 +34,45 @@ input[type=text], input[type=password] {
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5e9a67c39241182cdfba8d4939e4a1f5366716ef
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
   margin-right: 10%;
 }
 
 .container button:hover {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+}
+
+button:hover {
+>>>>>>> 8a216286c37d84d97ec2e1edeff2254ce05e3212
+>>>>>>> 5e9a67c39241182cdfba8d4939e4a1f5366716ef
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
   opacity: 0.8;
 }
 
 /* Extra styles for the cancel button */
+<<<<<<< HEAD
 .container .cancelbtn {
+=======
+<<<<<<< HEAD
+.container .cancelbtn {
+=======
+<<<<<<< HEAD
+.container .cancelbtn {
+=======
+.cancelbtn {
+>>>>>>> 8a216286c37d84d97ec2e1edeff2254ce05e3212
+>>>>>>> 5e9a67c39241182cdfba8d4939e4a1f5366716ef
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
   width: auto;
   padding: 10px 18px;
   background-color: #f44336;
@@ -49,7 +94,19 @@ img.avatar {
   padding: 16px;
 }
 
+<<<<<<< HEAD
 .container span.psw {
+=======
+<<<<<<< HEAD
+.container span.psw {
+=======
+<<<<<<< HEAD
+.container span.psw {
+=======
+span.psw {
+>>>>>>> 8a216286c37d84d97ec2e1edeff2254ce05e3212
+>>>>>>> 5e9a67c39241182cdfba8d4939e4a1f5366716ef
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
   float: right;
   padding-top: 16px;
 }
@@ -120,17 +177,34 @@ img.avatar {
   }
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
 /* New css */
 
 .topnav {
   overflow: hidden;
   background-color: #3f5267;
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+/* New css */
+
+.bouton_login{
+>>>>>>> 5e9a67c39241182cdfba8d4939e4a1f5366716ef
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
   text-align: center;
   width: 8%;
   height: 60px;
   float: left;
   box-sizing: border-box;
   border-right: 1px solid rgba(0,0,0,0.2);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
   border-radius: 2px;
   
 }
@@ -143,7 +217,11 @@ img.avatar {
   text-decoration: none;
   font-size: 17px;
   margin-right: 60px;
+<<<<<<< HEAD
   margin-left: -5px;
+=======
+  margin-left: 10px;
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
 }
 
 .topnav a:hover {
@@ -155,12 +233,40 @@ img.avatar {
 .topnav2 {
   overflow: hidden;
   background-color: #3f5267;
+<<<<<<< HEAD
+=======
+=======
+  border-radius: 5px;
+
+}
+
+.bouton_login button {
+  background-color: greenyellow/*rgb(51, 87, 207)*/;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.bouton_login button:hover {
+  opacity: 0.8;
+}
+
+.bouton_signin{
+>>>>>>> 5e9a67c39241182cdfba8d4939e4a1f5366716ef
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
   text-align: center;
   width: 8%;
   height: 60px;
   float: left;
   box-sizing: border-box;
   border-right: 1px solid rgba(0,0,0,0.2);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
   border-radius: 2px;
   
 }
@@ -172,7 +278,11 @@ img.avatar {
   padding: 20px 13px;
   text-decoration: none;
   font-size: 17px;
+<<<<<<< HEAD
   margin-left: -5px;
+=======
+  margin-right: 60px;
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
 }
 
 .topnav2 a:hover {
@@ -181,3 +291,37 @@ img.avatar {
 }
 
 
+<<<<<<< HEAD
+=======
+=======
+  border-radius: 5px;
+
+}
+
+.bouton_signin button {
+  background-color: greenyellow/*rgb(51, 87, 207)*/;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.bouton_signin button:hover {
+  opacity: 0.8;
+}
+=======
+#boom {
+  text-align: center;
+
+}
+
+
+/* New css */
+>>>>>>> 8a216286c37d84d97ec2e1edeff2254ce05e3212
+
+
+
+>>>>>>> 5e9a67c39241182cdfba8d4939e4a1f5366716ef
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453

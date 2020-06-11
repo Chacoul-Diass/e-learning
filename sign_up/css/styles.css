@@ -8,6 +8,7 @@
 }
 
 body{
+<<<<<<< HEAD
     background-color: #74889e; /*#bbc7d4;*/
     margin: 0;
     padding: 0;
@@ -15,6 +16,9 @@ body{
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
+=======
+    background: #e6e6e6;
+>>>>>>> da4c2d020bd15caf1d2f2e34a25d98dd1214e453
 }
 
 #header{
