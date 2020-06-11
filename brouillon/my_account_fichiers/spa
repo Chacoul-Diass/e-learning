@@ -1,0 +1,1 @@
+(function() {DY.spaReady = true;DY.session = '1173d435601376ddc9d0d957fbc806da';DY.jsession = 'a94a3c58509ec338cc442c1ad587e5b2';DY.weather = [];DY.currentWeather = null;DY.feedProperties = {};DY.itemsData = {};DY.pd2 = {};DY.rvCount = 0;DY.rpCount = 0;DY.csCount = 0;DY.wlCount = 0;DY.API('pub', { on: 'spa-ready' });})();

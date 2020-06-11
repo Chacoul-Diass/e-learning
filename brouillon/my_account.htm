@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html ng-controller="AuthCtrl as auth" class="myAvaLtr" ng-strict-di="" style="--loader:url('/images/Loader_Ava.svg');"><head><style type="text/css" data-di-track="1" data-di-rand="1591386751764" data-di-res-id="3fee92d8-13eb538">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css" data-di-track="1" data-di-rand="1591386751764" data-di-res-id="51b1632b-ae67ce3a">.uib-time input{width:50px;}</style><style type="text/css" data-di-track="1" data-di-rand="1591386751765" data-di-res-id="a239aa61-34fcef5c">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css" data-di-track="1" data-di-rand="1591386751765" data-di-res-id="1a85cd04-4432905a">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}.uib-left,.uib-right{width:100%}</style><style type="text/css" data-di-track="1" data-di-rand="1591386751765" data-di-res-id="f3ac9ef5-5b5c157b">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute;top:-9999px;width:50px;height:50px;overflow:scroll;}</style><style type="text/css" data-di-track="1" data-di-rand="1591386751766" data-di-res-id="1a85cd04-ad56a593">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style type="text/css" data-di-track="1" data-di-rand="1591386751766" data-di-res-id="83062ea-6949788b">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    <meta name="description" content="Accédez à votre compte AvaTrade en vous connectant avec votre adresse e-mail et votre mot de passe. Vérifiez votre solde, déposez ou retirez des fonds depuis votre tableau de bord.">
+    <meta property="og:description" content="Accédez à votre compte AvaTrade en vous connectant avec votre adresse e-mail et votre mot de passe. Vérifiez votre solde, déposez ou retirez des fonds depuis votre tableau de bord.">
+    <meta name="twitter:description" content="Accédez à votre compte AvaTrade en vous connectant avec votre adresse e-mail et votre mot de passe. Vérifiez votre solde, déposez ou retirez des fonds depuis votre tableau de bord.">
+    <!-- to support future responsive mobile versions of this html -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta property="og:image" content="https://myvip.avatrade.com/images/ava-blue-chart.jpg">
+    <meta property="og:image:secure_url" content="https://myvip.avatrade.com/images/ava-blue-chart.jpg">
+    <meta name="twitter:image" content="https://myvip.avatrade.com/images/ava-blue-chart.jpg">
+    <meta property="og:image:height" content="600">
+    <meta property="og:image:width" content="600">
+
+    <!-- to ensure proper conversion for each language -->
+    <link rel="alternate" hreflang="en" href="https://myvip.avatrade.com/">
+    <link rel="alternate" hreflang="fr" href="https://myvip.avatrade.fr/">
+    <link rel="alternate" hreflang="ar" href="https://myvip.avatrade.sa.com/">
+    <link rel="alternate" hreflang="en-ng" href="https://myvip.avatrade.ng/">
+    <link rel="alternate" hreflang="en-au" href="https://myvip.avatrade.com.au/">
+    <link rel="alternate" hreflang="en-kr" href="https://myvip.avatradeko.com/">
+    <link rel="alternate" hreflang="en-za" href="https://myvip.avatrade.co.za/">
+    <link rel="alternate" hreflang="de" href="https://myvip.avatrade.de/">
+    <link rel="alternate" hreflang="hu" href="https://myvip.avatrade.hu/">
+    <link rel="alternate" hreflang="pl" href="https://myvip.avatrade.pl/">
+    <link rel="alternate" hreflang="es" href="https://myvip.avatrade.es/">
+    <link rel="alternate" hreflang="zh-hant" href="https://myvip.avatrade.com.tw/">
+    <link rel="alternate" hreflang="nl" href="https://myvip.avatrade.nl/">
+    <link rel="alternate" hreflang="fi" href="https://myvip.avatrade.fi/">
+    <link rel="alternate" hreflang="he-il" href="https://myvip.atrade.co.il/">
+    <link rel="alternate" hreflang="it" href="https://myvip.avatrade.it/">
+    <link rel="alternate" hreflang="mn" href="https://myvip.avatrade.mn/">
+    <link rel="alternate" hreflang="pt-pt" href="https://myvip.avatrade.pt/">
+    <link rel="alternate" hreflang="pt-br" href="https://myvip.avatradeportuguese.com/">
+    <link rel="alternate" hreflang="ru" href="https://myvip.avatrade.ru/">
+    <link rel="alternate" hreflang="sv" href="https://myvip.avatrade.se/">
+    <link rel="alternate" hreflang="en-gb" href="https://myvip.avatrade.co.uk/">
+    <link rel="alternate" hreflang="es-cl" href="https://myvip.avatrade.cl/">
+    <link rel="alternate" hreflang="tr" href="https://myvip.avatradeturkish.com/">
+    <link rel="alternate" hreflang="id" href="https://myvip.avatrade.id/">
+    <link rel="alternate" hreflang="ar-ae" href="https://myvip.avatrade.ae/">
+    <link rel="alternate" hreflang="ar-sa" href="https://myvip.avatradear.com/">
+    <link rel="alternate" hreflang="en-ca" href="https://myvip.avatrade.ca/">
+    <link rel="alternate" hreflang="th-th" href="https://www.avatradethai.com/">
+    <link rel="alternate" hreflang="fr-ca" href="https://myvip.fr.friedbergdirectav.ca/">
+    <link rel="alternate" hreflang="cn-ca" href="https://myvip.cn.friedbergdirectav.ca/">
+
+    <!--<link rel="preload" href="//cdn.polyfill.io/v2/polyfill.js?features=default,fetch,modernizr:es5array,es6|gated&ua=ie/11" as="script" />-->
+    <!--<link rel="preload" href="//cdn.polyfill.io/v2/polyfill.js?features=es6|gated" as="script" />-->
+    <link rel="preload" href="https://myvip.avatrade.fr/myava/Widgets/plugin/polyfill.js" as="script">
+    <link rel="preload" href="https://www.googleadservices.com/pagead/conversion_async.js" as="script">
+    <link rel="preload" href="https://fonts.gstatic.com/s/opensans/v15/cJZKeOuBrn4kERxqtaUH3VtXRa8TVwTICgirnJhmVJw.woff2" as="font">
+    <!--<link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=cyrillic,cyrillic-ext,latin-ext?v=0.1.506" as="stylesheet" />-->
+    <link rel="preload" href="my_account_fichiers/font-awesome.css" as="stylesheet">
+    <link rel="preload" href="my_account_fichiers/animate.css" as="stylesheet">
+
+    <!--CDN-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=cyrillic,cyrillic-ext,latin-ext?v=0.1.506" rel="stylesheet">-->
+    <link href="my_account_fichiers/font-awesome.css" rel="stylesheet">
+    <link href="my_account_fichiers/animate.css" rel="stylesheet">
+
+    <!--\CDN-->
+    <!-- Pushwoosh -->
+    <link rel="manifest" href="https://myvip.avatrade.fr/myava/manifest.json">
+
+    <!-- base href="https://myvip.avatrade.fr/" -->
+    <!--    <link href="myava/bower_components/bootstrap-rtl/bootstrap-rtl.css?v=0.1.506" rel="stylesheet" />-->
+    <!--  <link href="myava/bower_components/bootstrap/dist/css/bootstrap.css?v=0.1.506" rel="stylesheet" />-->
+    <!--<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css?v=0.1.506" rel="stylesheet">-->
+    <!--<link href="myava/Style.min.css?v=0.1.506" rel="stylesheet" />-->
+
+    <link rel="shortcut icon" ng-href="/images/favicon-avatrade.ico" type="image/x-icon" href="https://myvip.avatrade.fr/images/favicon-avatrade.ico">
+    <link rel="stylesheet" href="my_account_fichiers/style.css" media="all">
+    <!-- removed for China
+     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjkqIV76uVvAv7Gl_cGnoxiEJGEPff-70&libraries=places"></script>  -->
+    <!--scrollfix for iOS
+    <script type="text/javascript">
+        if (navigator.userAgent.match(/(iPhone|iPad)/i)) {
+            var script = document.createElement("script"),
+                tag = document.getElementsByTagName("script")[0];
+            script.src = "../../Widgets/plugin/iScroll.js";//https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll-lite.js
+            tag.parentNode.insertBefore(script, tag);
+    }
+    </script>-->
+    <!--Tracker IO-->
+    <script src="my_account_fichiers/dy-coll-nojq-min.js" type="text/javascript" async="true"></script><script type="text/javascript" async="" src="my_account_fichiers/linkid.js"></script><script src="my_account_fichiers/136436216770158.js" async=""></script><script async="" src="my_account_fichiers/fbevents.js"></script><script type="text/javascript" async="" src="my_account_fichiers/conversion_async.js"></script><script type="text/javascript" async="" src="my_account_fichiers/analytics.js"></script><script type="text/javascript" async="" src="my_account_fichiers/bat.js"></script><script async="" src="my_account_fichiers/gtm.js"></script><script id="ze-snippet" src="my_account_fichiers/snippet.js"></script><script src="my_account_fichiers/hm.txt"></script><script async="" src="my_account_fichiers/di.js"></script><script src="my_account_fichiers/api_dynamic.js"></script><script src="my_account_fichiers/api_static.js"></script><script type="text/javascript" async="" src="my_account_fichiers/tracker.js"></script><script type="text/javascript">
+        function getParameterByName(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return (/token/i.test(name)) ? results[2] : decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        (function () {
+            var url = "";
+            var env = window.location.hostname.match(/^([\w\d]+)/);
+            if (/localhost/.test(env[1]))
+                url = "http://localhost:60749/Scripts/tracker.js"
+            else {
+                env = env && env[1].replace(/[my|\d]+/g, "");
+                env = env && env.replace(/[vip]/g, "");
+                env = (/qa|stg/.test(env) ? env : "www");
+                url = window.location.protocol + "//" + env + ".avatrade.io" + (/qa/.test(env) ? ":4443" : "") + "/scripts/tracker.min.js";
+            }
+            if (window.self === window.top) {
+                var scripts = document.getElementsByTagName('script');
+                var found = false;
+                for (var i = scripts.length; i--;) {
+                    if (scripts[i].src == url) { found = true; break; };
+                }
+            };
+            if (!found) {
+                var aa = document.createElement('script'); aa.type = 'text/javascript'; aa.async = true; aa.src = url;
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(aa, s);
+            }
+        })();
+    </script>
+    <!--Dynamic Yield-->
+    <script type="text/javascript">
+        window.DY = window.DY || {};
+        DY.recommendationContext = { type: 'OTHER' };
+
+        var s = document.getElementsByTagName("script")[0];
+        var script1 = document.createElement("script");
+        var script2 = document.createElement("script");
+        if (/myvip/.test(window.location.hostname)) {
+            script1.src = "//cdn.dynamicyield.com/api/8770940/api_dynamic.js";
+            script2.src = "//cdn.dynamicyield.com/api/8770940/api_static.js";
+        }
+        else {
+            script1.src = "//cdn.dynamicyield.com/api/8770870/api_dynamic.js";
+            script2.src = "//cdn.dynamicyield.com/api/8770870/api_static.js";
+        }
+        s.parentNode.insertBefore(script1, s);
+        s.parentNode.insertBefore(script2, s);
+    </script>
+    <!-- Decibel -->
+    <script type="text/javascript">
+
+
+
+
+        if (!/MSIE|Trident|Edge/gi.test(navigator.userAgent) && !/iPad|iPhone|iPod/gi.test(navigator.userAgent) && !/Mac|iPhone|iPod|iPad/i.test(navigator.platform)) {
+
+            // <![CDATA[
+            (function (d, e, c, i, b, el, it) {
+                d._da_ = d._da_ || []; _da_.oldErr = d.onerror; _da_.err = [];
+                d.onerror = function () { _da_.err.push(arguments); _da_.oldErr && _da_.oldErr.apply(d, Array.prototype.slice.call(arguments)); };
+                d.DecibelInsight = b; d[b] = d[b] || function () { (d[b].q = d[b].q || []).push(arguments); };
+                el = e.createElement(c), it = e.getElementsByTagName(c)[0]; el.async = 1; el.src = i; it.parentNode.insertBefore(el, it);
+            })(window, document, 'script', 'https://cdn.decibelinsight.net/i/13832/226517/di.js', 'decibelInsight');
+        }
+        // ]]>
+    </script>
+    <!-- PushWoosh -->
+    <script src="my_account_fichiers/stc_pushreg.js"></script>
+    <script>
+        (function () {
+            const src = window.location.pathname.includes('app/myava') ? "./shared/js/pushwoosh.js" : "app/myava/shared/js/pushwoosh.js";
+            document.write('<script src="' + src + '"><\/script>');
+        })();
+    </script><script src="my_account_fichiers/pushwoosh.js"></script>
+    <script src="my_account_fichiers/pushwoosh-web-notifications.js" async=""></script>
+
+    <title ng-bind="companyNameSentence"></title>
+    <!--baidu-->
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var key;
+            if (/avatrade\.cn/i.test(window.location.hostname)) { key = '875f947af38831fbf1d71155ebf525f4'; }
+            if (/sentryd\.cn/i.test(window.location.hostname)) { key = 'b2d0e7ed749cd4ccf78c51fd442cb557'; }
+            if (/avastocks\.cn/i.test(window.location.hostname)) { key = 'c0e9e1c2861d9868c746902b4038c302'; }
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?" + key;
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <!--Intialize dataLayer-->
+    <script>
+        var dataLayer = window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({ originalLocation: document.location.protocol + '//' + document.location.hostname + document.location.pathname + document.location.search });
+    </script>
+    <!--SmartBid-->
+    <script id="sb_trk" async="" src="my_account_fichiers/script.js"></script>
+
+    <!-- Start of avatrade Zendesk Widget script -->
+    <!--<script async id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=860f88f7-ac5e-4283-87f1-ecd65287ff6d"></script>-->
+    <script async="" type="text/javascript">
+        var zenKey = "860f88f7-ac5e-4283-87f1-ecd65287ff6d";
+        if (/myvip.avatrade.com.my|myvip.avatradethai.com|myvip.avatrade.id|myvip.avatrade.cn|myvip.avatrade.com.tw|myvip.avapro.com.cn/.test(window.location.hostname)) {
+            zenKey = "f805d7a6-5822-4bcb-a18d-8cba7da138db";
+        }
+        var zendesk = document.createElement("script");
+        zendesk.setAttribute("id", "ze-snippet");
+        zendesk.src = "https://static.zdassets.com/ekr/snippet.js?key=" + zenKey;
+        var _s = document.getElementsByTagName("script")[0];
+        _s.parentNode.insertBefore(zendesk, _s);
+    </script>
+    <!-- End of avatrade Zendesk Widget script -->
+    <script>try { var whiteLabelData = sessionStorage.getItem("ngStorage-whiteLabelData"); if (whiteLabelData && (whiteLabelData = JSON.parse(whiteLabelData)) && whiteLabelData.WhiteLabelDataExtension && whiteLabelData.WhiteLabelDataExtension.customStyles) { var _opt = whiteLabelData.WhiteLabelDataExtension.customStyles, rootStyle = document.querySelector(":root").style; Object.keys(_opt).forEach(function (t) { var e = _opt[t]; if (/font-family/i.test(t)) { var a = "https://fonts.googleapis.com/css?family=" + e.replace(" ", "+"), o = document.createElement("link"); o.href = "data:text/css," + encodeURIComponent("@import url('" + a + "');"), o.rel = "stylesheet", o.type = "text/css", document.head.appendChild(o) } /loader/i.test(t) && (e = "url('/images/" + e + "')"), rootStyle.setProperty("--" + t, e) }) } } catch (t) { }</script>
+    <!-- Start Visual Website Optimizer Asynchronous Code -->
+    <!--<script type='text/javascript'>
+        var _vwo_code = (function () {
+            var account_id = 186695,
+                settings_tolerance = 2000,
+                library_tolerance = 2500,
+                use_existing_jquery = false,
+                is_spa = 1,
+                /* DO NOT EDIT BELOW THIS LINE */
+                f = false, d = document; return { use_existing_jquery: function () { return use_existing_jquery; }, library_tolerance: function () { return library_tolerance; }, finish: function () { if (!f) { f = true; var a = d.getElementById('_vis_opt_path_hides'); if (a) a.parentNode.removeChild(a); } }, finished: function () { return f; }, load: function (a) { var b = d.createElement('script'); b.src = a; b.type = 'text/javascript'; b.innerText; b.onerror = function () { _vwo_code.finish(); }; d.getElementsByTagName('head')[0].appendChild(b); }, init: function () { settings_timer = setTimeout('_vwo_code.finish()', settings_tolerance); var a = d.createElement('style'), b = 'body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}', h = d.getElementsByTagName('head')[0]; a.setAttribute('id', '_vis_opt_path_hides'); a.setAttribute('type', 'text/css'); if (a.styleSheet) a.styleSheet.cssText = b; else a.appendChild(d.createTextNode(b)); h.appendChild(a); this.load('//dev.visualwebsiteoptimizer.com/j.php?a=' + account_id + '&u=' + encodeURIComponent(d.URL) + '&f=' + (+is_spa) + '&r=' + Math.random()); return settings_timer; } };
+        }()); _vwo_settings_timer = _vwo_code.init();
+    </script>-->
+    <!-- End Visual Website Optimizer Asynchronous Code -->
+<style type="text/css" data-di-track="1" data-di-rand="1591386751768" data-di-res-id="83062ea-8cd36bd8">.jp-card,.dir-ltr{direction: ltr!important}.myAvaRtl .dir-ltr{text-align: right}.jp-card-align--center > .jp-card-container{margin: auto}.jp-card.jp-card-safari.jp-card-identified .jp-card-front:before,.jp-card.jp-card-safari.jp-card-identified .jp-card-back:before{background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), linear-gradient(-25deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%)}.jp-card.jp-card-ie-10.jp-card-flipped,.jp-card.jp-card-ie-11.jp-card-flipped{-webkit-transform: 0deg;-moz-transform: 0deg;-ms-transform: 0deg;-o-transform: 0deg;transform: 0deg}.jp-card.jp-card-ie-10.jp-card-flipped .jp-card-front,.jp-card.jp-card-ie-11.jp-card-flipped .jp-card-front{-webkit-transform: rotateY(0deg);-moz-transform: rotateY(0deg);-ms-transform: rotateY(0deg);-o-transform: rotateY(0deg);transform: rotateY(0deg)}.jp-card.jp-card-ie-10.jp-card-flipped .jp-card-back,.jp-card.jp-card-ie-11.jp-card-flipped .jp-card-back{-webkit-transform: rotateY(0deg);-moz-transform: rotateY(0deg);-ms-transform: rotateY(0deg);-o-transform: rotateY(0deg);transform: rotateY(0deg)}.jp-card.jp-card-ie-10.jp-card-flipped .jp-card-back:after,.jp-card.jp-card-ie-11.jp-card-flipped .jp-card-back:after{left: 18%}.jp-card.jp-card-ie-10.jp-card-flipped .jp-card-back .jp-card-cvc,.jp-card.jp-card-ie-11.jp-card-flipped .jp-card-back .jp-card-cvc{-webkit-transform: rotateY(180deg);-moz-transform: rotateY(180deg);-ms-transform: rotateY(180deg);-o-transform: rotateY(180deg);transform: rotateY(180deg);left: 5%}.jp-card.jp-card-ie-10.jp-card-flipped .jp-card-back .jp-card-shiny,.jp-card.jp-card-ie-11.jp-card-flipped .jp-card-back .jp-card-shiny{left: 84%}.jp-card.jp-card-ie-10.jp-card-flipped .jp-card-back .jp-card-shiny:after,.jp-card.jp-card-ie-11.jp-card-flipped .jp-card-back .jp-card-shiny:after{left: -480%;-webkit-transform: rotateY(180deg);-moz-transform: rotateY(180deg);-ms-transform: rotateY(180deg);-o-transform: rotateY(180deg);transform: rotateY(180deg)}.jp-card.jp-card-ie-10.jp-card-amex .jp-card-back,.jp-card.jp-card-ie-11.jp-card-amex .jp-card-back{display: none}.jp-card-logo{height: 36px;width: 60px;font-style: italic}.jp-card-logo,.jp-card-logo:before,.jp-card-logo:after{box-sizing: border-box}.jp-card-logo.jp-card-amex{text-transform: uppercase;font-size: 4px;font-weight: bold;color: white;background-image: repeating-radial-gradient(circle at center, #fff 1px, #999 2px);background-image: repeating-radial-gradient(circle at center, #fff 1px, #999 2px);border: 1px solid #EEE}.jp-card-logo.jp-card-amex:before,.jp-card-logo.jp-card-amex:after{width: 28px;display: block;position: absolute;left: 16px}.jp-card-logo.jp-card-amex:before{height: 28px;content: 'american';top: 3px;text-align: left;padding-left: 2px;padding-top: 11px;background: #267AC3}.jp-card-logo.jp-card-amex:after{content: 'express';bottom: 11px;text-align: right;padding-right: 2px}.jp-card.jp-card-amex.jp-card-flipped{-webkit-transform: none;-moz-transform: none;-ms-transform: none;-o-transform: none;transform: none}.jp-card.jp-card-amex.jp-card-identified .jp-card-front:before,.jp-card.jp-card-amex.jp-card-identified .jp-card-back:before{background-color: #108168}.jp-card.jp-card-amex.jp-card-identified .jp-card-front .jp-card-logo.jp-card-amex{opacity: 1}.jp-card.jp-card-amex.jp-card-identified .jp-card-front .jp-card-cvc{visibility: visible}.jp-card.jp-card-amex.jp-card-identified .jp-card-front:after{opacity: 1}.jp-card-logo.jp-card-discover{background: #f60;color: #111;text-transform: uppercase;font-style: normal;font-weight: bold;font-size: 10px;text-align: center;overflow: hidden;z-index: 1;padding-top: 9px;letter-spacing: .03em;border: 1px solid #EEE}.jp-card-logo.jp-card-discover:before,.jp-card-logo.jp-card-discover:after{content: ' ';display: block;position: absolute}.jp-card-logo.jp-card-discover:before{background: white;width: 200px;height: 200px;border-radius: 200px;bottom: -5%;right: -80%;z-index: -1}.jp-card-logo.jp-card-discover:after{width: 8px;height: 8px;border-radius: 4px;top: 10px;left: 27px;background-color: #f60;background-image: -webkit-radial-gradient(#f60, #fff);background-image: radial-gradient( #f60, #fff);content: 'network';font-size: 4px;line-height: 24px;text-indent: -7px}.jp-card .jp-card-front .jp-card-logo.jp-card-discover{right: 12%;top: 18%}.jp-card.jp-card-discover.jp-card-identified .jp-card-front:before,.jp-card.jp-card-discover.jp-card-identified .jp-card-back:before{background-color: #86B8CF}.jp-card.jp-card-discover.jp-card-identified .jp-card-logo.jp-card-discover{opacity: 1}.jp-card.jp-card-discover.jp-card-identified .jp-card-front:after{-webkit-transition: 400ms;-moz-transition: 400ms;transition: 400ms;content: ' ';display: block;background-color: #f60;background-image: -webkit-linear-gradient(#f60, #ffa366, #f60);background-image: linear-gradient(#f60, #ffa366, #f60);height: 50px;width: 50px;border-radius: 25px;position: absolute;left: 100%;top: 15%;margin-left: -25px;box-shadow: inset 1px 1px 3px 1px rgba(0, 0, 0, 0.5)}.jp-card-logo.jp-card-visa,.jp-card-logo.jp-card-visaelectron,.jp-card-logo.jp-card-visadebit{background: white;text-transform: uppercase;color: #1A1876;text-align: center;font-weight: bold;font-size: 15px;line-height: 18px}.jp-card-logo.jp-card-visa:before,.jp-card-logo.jp-card-visaelectron:before,.jp-card-logo.jp-card-visadebit:before,.jp-card-logo.jp-card-visa:after,.jp-card-logo.jp-card-visaelectron:after,.jp-card-logo.jp-card-visadebit:after{content: ' ';display: block;width: 100%;height: 25%}.jp-card-logo.jp-card-visaelectron:after{content: 'Electron';font-size: 8px;font-weight: bold;line-height: 1.5}.jp-card-logo.jp-card-visadebit:after{content: 'Debit';font-size: 8px;font-weight: bold;line-height: 1.5}.jp-card-logo.jp-card-visa:before,.jp-card-logo.jp-card-visaelectron:before,.jp-card-logo.jp-card-visadebit:before{background: #1A1876}.jp-card-logo.jp-card-visa:after,.jp-card-logo.jp-card-visaelectron:after,.jp-card-logo.jp-card-visadebit:after{background: #E79800}.jp-card.jp-card-visa.jp-card-identified .jp-card-front:before,.jp-card.jp-card-visaelectron.jp-card-identified .jp-card-front:before,.jp-card.jp-card-visadebit.jp-card-identified .jp-card-front:before.jp-card.jp-card-visa.jp-card-identified .jp-card-back:before,.jp-card.jp-card-visaelectron.jp-card-identified .jp-card-back:before,.jp-card.jp-card-visadebit.jp-card-identified .jp-card-back:before{background-color: #191278}.jp-card.jp-card-visa.jp-card-identified .jp-card-logo.jp-card-visa,.jp-card.jp-card-visaelectron.jp-card-identified .jp-card-logo.jp-card-visaelectron,.jp-card.jp-card-visadebit.jp-card-identified .jp-card-logo.jp-card-visadebit{opacity: 1}.jp-card-logo.jp-card-mastercard{color: white;font-weight: bold;text-align: center;font-size: 9px;line-height: 36px;z-index: 1;text-shadow: 1px 1px rgba(0, 0, 0, 0.6)}.jp-card-logo.jp-card-mastercard:before,.jp-card-logo.jp-card-mastercard:after{content: ' ';display: block;width: 36px;top: 0;position: absolute;height: 36px;border-radius: 18px}.jp-card-logo.jp-card-mastercard:before{left: 0;background: red;z-index: -1}.jp-card-logo.jp-card-mastercard:after{right: 0;background: #FFAB00;z-index: -2}.jp-card.jp-card-mastercard.jp-card-identified .jp-card-front .jp-card-logo.jp-card-mastercard,.jp-card.jp-card-mastercard.jp-card-identified .jp-card-back .jp-card-logo.jp-card-mastercard{box-shadow: none}.jp-card.jp-card-mastercard.jp-card-identified .jp-card-front:before,.jp-card.jp-card-mastercard.jp-card-identified .jp-card-back:before{background-color: #0061A8}.jp-card.jp-card-mastercard.jp-card-identified .jp-card-logo.jp-card-mastercard{opacity: 1}.jp-card-logo.jp-card-maestro{color: white;font-weight: bold;text-align: center;font-size: 14px;line-height: 36px;z-index: 1;text-shadow: 1px 1px rgba(0, 0, 0, 0.6)}.jp-card-logo.jp-card-maestro:before,.jp-card-logo.jp-card-maestro:after{content: ' ';display: block;width: 36px;top: 0;position: absolute;height: 36px;border-radius: 18px}.jp-card-logo.jp-card-maestro:before{left: 0;background: #0064CB;z-index: -1}.jp-card-logo.jp-card-maestro:after{right: 0;background: #c00;z-index: -2}.jp-card.jp-card-maestro.jp-card-identified .jp-card-front .jp-card-logo.jp-card-maestro,.jp-card.jp-card-maestro.jp-card-identified .jp-card-back .jp-card-logo.jp-card-maestro{box-shadow: none}.jp-card.jp-card-maestro.jp-card-identified .jp-card-front:before,.jp-card.jp-card-maestro.jp-card-identified .jp-card-back:before{background-color: #0B2C5F}.jp-card.jp-card-maestro.jp-card-identified .jp-card-logo.jp-card-maestro{opacity: 1}.jp-card-logo.jp-card-dankort{width: 60px;height: 36px;padding: 3px;border-radius: 8px;border: #000 1px solid;background-color: #fff}.jp-card-logo.jp-card-dankort .dk{position: relative;width: 100%;height: 100%;overflow: hidden}.jp-card-logo.jp-card-dankort .dk:before{background-color: #ED1C24;content: '';position: absolute;width: 100%;height: 100%;display: block;border-radius: 6px}.jp-card-logo.jp-card-dankort .dk:after{content: '';position: absolute;top: 50%;margin-top: -7.7px;right: 0;width: 0;height: 0;border-style: solid;border-width: 7px 7px 10px 0;border-color: transparent #ED1C24 transparent transparent;z-index: 1}.jp-card-logo.jp-card-dankort .d,.jp-card-logo.jp-card-dankort .k{position: absolute;top: 50%;width: 50%;display: block;height: 15.4px;margin-top: -7.7px;background: white}.jp-card-logo.jp-card-dankort .d{left: 0;border-radius: 0 8px 10px 0}.jp-card-logo.jp-card-dankort .d:before{content: '';position: absolute;top: 50%;left: 50%;display: block;background: #ED1C24;border-radius: 2px 4px 6px 0px;height: 5px;width: 7px;margin: -3px 0 0 -4px}.jp-card-logo.jp-card-dankort .k{right: 0}.jp-card-logo.jp-card-dankort .k:before,.jp-card-logo.jp-card-dankort .k:after{content: '';position: absolute;right: 50%;width: 0;height: 0;border-style: solid;margin-right: -1px}.jp-card-logo.jp-card-dankort .k:before{top: 0;border-width: 8px 5px 0 0;border-color: #ED1C24 transparent transparent transparent}.jp-card-logo.jp-card-dankort .k:after{bottom: 0;border-width: 0 5px 8px 0;border-color: transparent transparent #ED1C24 transparent}.jp-card.jp-card-dankort.jp-card-identified .jp-card-front:before,.jp-card.jp-card-dankort.jp-card-identified .jp-card-back:before{background-color: #0055C7}.jp-card.jp-card-dankort.jp-card-identified .jp-card-logo.jp-card-dankort{opacity: 1}.jp-card-logo.jp-card-elo{height: 50px;width: 50px;border-radius: 100%;background: black;color: white;text-align: center;text-transform: lowercase;font-size: 21px;font-style: normal;letter-spacing: 1px;font-weight: bold;padding-top: 13px}.jp-card-logo.jp-card-elo .e,.jp-card-logo.jp-card-elo .l,.jp-card-logo.jp-card-elo .o{display: inline-block;position: relative}.jp-card-logo.jp-card-elo .e{-webkit-transform: rotate(-15deg);-moz-transform: rotate(-15deg);-ms-transform: rotate(-15deg);-o-transform: rotate(-15deg);transform: rotate(-15deg)}.jp-card-logo.jp-card-elo .o{position: relative;display: inline-block;width: 12px;height: 12px;right: 0;top: 7px;border-radius: 100%;background-image: -webkit-linear-gradient( #ff0 50%, red 50%);background-image: linear-gradient( #ff0 50%, red 50%);-webkit-transform: rotate(40deg);-moz-transform: rotate(40deg);-ms-transform: rotate(40deg);-o-transform: rotate(40deg);transform: rotate(40deg);text-indent: -9999px}.jp-card-logo.jp-card-elo .o:before{content: '';position: absolute;width: 49%;height: 49%;background: black;border-radius: 100%;text-indent: -99999px;top: 25%;left: 25%}.jp-card.jp-card-elo.jp-card-identified .jp-card-front:before,.jp-card.jp-card-elo.jp-card-identified .jp-card-back:before{background-color: #6F6969}.jp-card.jp-card-elo.jp-card-identified .jp-card-logo.jp-card-elo{opacity: 1}.jp-card-logo.jp-card-dinersclub{font-family: serif;height: 40px;width: 100px;color: white;font-size: 17px;font-style: normal;letter-spacing: 1px}.jp-card-logo.jp-card-dinersclub::before,.jp-card-logo.jp-card-dinersclub::after{display: block;position: relative}.jp-card-logo.jp-card-dinersclub::before{content: 'Diners Club'}.jp-card-logo.jp-card-dinersclub::after{content: 'International';text-transform: uppercase;font-size: 0.6em}.jp-card.jp-card-dinersclub .jp-card-front .jp-card-logo{box-shadow: none !important}.jp-card.jp-card-dinersclub.jp-card-identified .jp-card-front:before,.jp-card.jp-card-dinersclub.jp-card-identified .jp-card-back:before{background-color: #999}.jp-card.jp-card-dinersclub.jp-card-identified .jp-card-logo.jp-card-dinersclub{opacity: 1}.jp-card-container{-webkit-perspective: 1000px;-moz-perspective: 1000px;perspective: 1000px;width: 350px;max-width: 100%;height: 200px;z-index: 1;position: relative;margin-bottom: 1em}.jp-card{font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;line-height: 1;position: relative;width: 100%;height: 100%;min-width: 300px;border-radius: 10px;-webkit-transform-style: preserve-3d;-moz-transform-style: preserve-3d;-ms-transform-style: preserve-3d;-o-transform-style: preserve-3d;transform-style: preserve-3d;-webkit-transition: all 400ms linear;-moz-transition: all 400ms linear;transition: all 400ms linear}.jp-card>*,.jp-card>*:before,.jp-card>*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;font-family: inherit}.jp-card.jp-card-flipped{-webkit-transform: rotateY(180deg);-moz-transform: rotateY(180deg);-ms-transform: rotateY(180deg);-o-transform: rotateY(180deg);transform: rotateY(180deg)}.jp-card .jp-card-front,.jp-card .jp-card-back{-webkit-backface-visibility: hidden;backface-visibility: hidden;-webkit-transform-style: preserve-3d;-moz-transform-style: preserve-3d;-ms-transform-style: preserve-3d;-o-transform-style: preserve-3d;transform-style: preserve-3d;-webkit-transition: all 400ms linear;-moz-transition: all 400ms linear;transition: all 400ms linear;width: 100%;height: 100%;position: absolute;top: 0;left: 0;overflow: hidden;border-radius: 10px;background: #DDD}.jp-card .jp-card-front:before,.jp-card .jp-card-back:before{content: ' ';display: block;position: absolute;width: 100%;height: 100%;top: 0;left: 0;opacity: 0;border-radius: 10px;-webkit-transition: all 400ms ease;-moz-transition: all 400ms ease;transition: all 400ms ease}.jp-card .jp-card-front:after,.jp-card .jp-card-back:after{content: ' ';display: block}.jp-card .jp-card-front .jp-card-display,.jp-card .jp-card-back .jp-card-display{color: #fff;font-weight: normal;opacity: 0.5;-webkit-transition: opacity 400ms linear;-moz-transition: opacity 400ms linear;transition: opacity 400ms linear}.jp-card .jp-card-front .jp-card-display.jp-card-focused,.jp-card .jp-card-back .jp-card-display.jp-card-focused{opacity: 1;font-weight: 700}.jp-card .jp-card-front .jp-card-cvc,.jp-card .jp-card-back .jp-card-cvc{font-family: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;font-size: 14px}.jp-card .jp-card-front .jp-card-shiny,.jp-card .jp-card-back .jp-card-shiny{width: 50px;height: 35px;border-radius: 5px;background: #CCC;position: relative}.jp-card .jp-card-front .jp-card-shiny:before,.jp-card .jp-card-back .jp-card-shiny:before{content: ' ';display: block;width: 70%;height: 60%;border-top-right-radius: 5px;border-bottom-right-radius: 5px;background: #d9d9d9;position: absolute;top: 20%}.jp-card .jp-card-front .jp-card-logo{position: absolute;opacity: 0;right: 5%;top: 8%;-webkit-transition: 400ms;-moz-transition: 400ms;transition: 400ms}.jp-card .jp-card-front .jp-card-lower{width: 80%;position: absolute;left: 10%;bottom: 30px}@media only screen and (max-width: 480px){.jp-card .jp-card-front .jp-card-lower{width: 90%;left: 5%}}.jp-card .jp-card-front .jp-card-lower .jp-card-cvc{visibility: hidden;float: right;position: relative;bottom: 5px}.jp-card .jp-card-front .jp-card-lower .jp-card-number{font-family: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;font-size: 1.6em;clear: both;margin-bottom: 30px}.jp-card .jp-card-front .jp-card-lower .jp-card-expiry{font-family: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;letter-spacing: 0em;position: relative;float: right;width: 25%}.jp-card .jp-card-front .jp-card-lower .jp-card-expiry:before,.jp-card .jp-card-front .jp-card-lower .jp-card-expiry:after{font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: bold;font-size: 7px;white-space: pre;display: block;opacity: .5}.jp-card .jp-card-front .jp-card-lower .jp-card-expiry:before{content: attr(data-before);margin-bottom: 2px;font-size: 7px;text-transform: uppercase}.jp-card .jp-card-front .jp-card-lower .jp-card-expiry:after{position: absolute;content: attr(data-after);text-align: right;right: 100%;margin-right: 5px;margin-top: 2px;bottom: 0}.jp-card .jp-card-front .jp-card-lower .jp-card-name{text-transform: uppercase;font-family: 'Bitstream Vera Sans Mono', Consolas, Courier, monospace;font-size: 1.5em;max-height: 45px;position: absolute;bottom: 0;width: 60%;max-width: 190px;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: horizontal;overflow: hidden;text-overflow: ellipsis}.jp-card .jp-card-back{-webkit-transform: rotateY(180deg);-moz-transform: rotateY(180deg);-ms-transform: rotateY(180deg);-o-transform: rotateY(180deg);transform: rotateY(180deg)}.jp-card .jp-card-back .jp-card-bar{background-color: #444;background-image: -webkit-linear-gradient(#444, #333);background-image: linear-gradient(#444, #333);width: 100%;height: 20%;position: absolute;top: 10%}.jp-card .jp-card-back:after{content: ' ';display: block;background-color: #fff;background-image: -webkit-linear-gradient(#fff, #fff);background-image: linear-gradient(#fff, #fff);width: 80%;height: 16%;position: absolute;top: 40%;left: 2%}.jp-card .jp-card-back .jp-card-cvc{position: absolute;top: 40%;left: 85%;-webkit-transition-delay: 600ms;-moz-transition-delay: 600ms;transition-delay: 600ms}.jp-card .jp-card-back .jp-card-shiny{position: absolute;top: 66%;left: 2%}.jp-card .jp-card-back .jp-card-shiny:after{content: 'This card has been issued by Jesse Pollak and is licensed for anyone to use anywhere for free. It comes with no warranty. For support issues, please visit: github.com/jessepollak/card.';position: absolute;left: 120%;top: 5%;color: white;font-size: 7px;width: 230px;opacity: .5}.jp-card.jp-card-identified{box-shadow: 0 0 20px rgba(0, 0, 0, 0.3)}.jp-card.jp-card-identified .jp-card-front,.jp-card.jp-card-identified .jp-card-back{background-color: #000;background-color: rgba(0, 0, 0, 0.5)}.jp-card.jp-card-identified .jp-card-front:before,.jp-card.jp-card-identified .jp-card-back:before{-webkit-transition: all 400ms ease;-moz-transition: all 400ms ease;transition: all 400ms ease;background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 15% 80%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 90% 20%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-radial-gradient(circle at 15% 80%, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), linear-gradient(-25deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);opacity: 1}.jp-card.jp-card-identified .jp-card-front .jp-card-logo,.jp-card.jp-card-identified .jp-card-back .jp-card-logo{box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3)}.jp-card.jp-card-identified.no-radial-gradient .jp-card-front:before,.jp-card.jp-card-identified.no-radial-gradient .jp-card-back:before{background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), -webkit-linear-gradient(-245deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%);background-image: repeating-linear-gradient(45deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.05) 1px, rgba(255, 255, 255, 0) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.03) 4px), repeating-linear-gradient(90deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), repeating-linear-gradient(210deg, rgba(255, 255, 255, 0) 1px, rgba(255, 255, 255, 0.03) 2px, rgba(255, 255, 255, 0.04) 3px, rgba(255, 255, 255, 0.05) 4px), linear-gradient(-25deg, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 90%)}.jp-card-logo.jp-card-jcb,.jp-card-logo.jp-card-jcb:before,.jp-card-logo.jp-card-jcb:after{width: 10px;height: 30px;border-top-left-radius: 4px;border-bottom-right-radius: 4px;background-color: #d8203c;color: #fff;-webkit-box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);-moz-box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3);line-height: 2.25;text-align: center;font-style: normal;background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0));background-image: linear-gradient(to right, rgba(0, 0, 0, .3), rgba(0, 0, 0, 0))}.jp-card-logo.jp-card-jcb{margin: 0 15px}.jp-card-logo.jp-card-jcb:before,.jp-card-logo.jp-card-jcb:after{position: absolute;top: 0}.jp-card-logo.jp-card-jcb:before{content: 'J';background-color: #1f4f90;left: -webkit-calc(-100% - 2px);left: -moz-calc(-100% - 2px);left: calc(-100% - 2px)}.jp-card-logo.jp-card-jcb:after{content: 'B';background-color: #4cac45;right: -webkit-calc(-100% - 2px);right: -moz-calc(-100% - 2px);right: calc(-100% - 2px)}.jp-card.jp-card-jcb.jp-card-identified .jp-card-logo.jp-card-jcb{opacity: 1}.jp-card.jp-card-jcb.jp-card-identified .jp-card-front:before,.jp-card.jp-card-jcb.jp-card-identified .jp-card-back:before{background-color: #0055C7}.jp-card-logo.jp-card-visadelta{background: -webkit-linear-gradient(left bottom, #fff 52%, #0063b0 55%);background: linear-gradient(to right top, #fff 52%, #0063b0 55%);color: #fff;font-style: normal;text-transform: uppercase;font-size: 9px;text-align: right;padding: 4px;border-radius: 4px}.jp-card-logo.jp-card-visadelta:before,.jp-card-logo.jp-card-visadelta:after{content: '';position: absolute;left: 0;bottom: 0}.jp-card-logo.jp-card-visadelta:before{background: -webkit-linear-gradient(left bottom, transparent 52%, #f1a628 55%);background: linear-gradient(to right top, transparent 52%, #f1a628 55%);width: 32px;height: 19px}.jp-card-logo.jp-card-visadelta:after{background: -webkit-linear-gradient(left bottom, transparent 52%, #e2042b 55%);background: linear-gradient(to right top, transparent 52%, #e2042b 55%);width: 17px;height: 10px}.jp-card.jp-card-visadelta.jp-card-identified .jp-card-logo.jp-card-visadelta{opacity: 1}.jp-card.jp-card-visadelta.jp-card-identified .jp-card-front:before,.jp-card.jp-card-visadelta.jp-card-identified .jp-card-back:before{background-color: #108168}</style><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","MainEntityOfpage":{"@type":"WebPage","@id":"https://myvip.avatrade.fr/my_account"},"headline":"","image":{"@type":"ImageObject","URL":"https://myvip.avatrade.com/images/ava-blue-chart.jpg","height":300,"width":300},"dateModified":"2019-11-28","datePublished":"2019-11-28","author":{"@type":"Person","name":"Eugene Liberson"},"publisher":{"@type":"Organization","name":"Avatrade","logo":{"@type":"imageObject","url":"https://myvip.avatrade.fr/wp-content/uploads/2017/06/logo.png"}},"description":"Access your account by logging in with your e-mail address and password. Check your balance, deposit or withdraw funds from your dashboard."}</script><script src="my_account_fichiers/a"></script><style id="dy-common-style" class="dy-common-style" type="text/css" data-di-track="1" data-di-rand="1591386751771" data-di-res-id="e8ef15d9-592e0382">.dy-wysiwyg{line-height:normal;direction:ltr;align-text:left;margin:0;padding:0;background-color:transparent}.dy-wysiwyg a{text-decoration:none;color:#00E}.dy-full-width-notifications-close,.dy-lb-close{color:#fff;display:inline-block;position:absolute}.dynotifyjs-wrapper .dy-lb-close{z-index:1;top:-8px;right:-9px;border:none;transition:opacity .15s;opacity:.7;background-size:14px;background-repeat:no-repeat;background-position:2px;width:18px;height:18px}.dynotifyjs-wrapper .dy-lb-close:hover{opacity:1}.dynotifyjs-corner{position:fixed;margin:0;z-index:1050}.dynotifyjs-corner .dynotifyjs-container,.dynotifyjs-corner .dynotifyjs-wrapper{position:relative;display:block;height:inherit;width:inherit;margin:11px 8px}.dynotifyjs-wrapper{z-index:1;position:absolute;display:inline-block;height:0;width:0}.dynotifyjs-container{display:none;z-index:1;position:absolute}[data-dynotify-html],[data-dynotify-text]{position:relative}.dynotifyjs-arrow{position:absolute;z-index:2;width:0;height:0}.dy-lb-close{top:-12px;right:-11px;cursor:pointer;border:1px solid #918686;border-radius:30px;height:22px;width:22px;background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTUgNTUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU1IDU1IiB4bWw6c3BhY2U9InByZXNlcnZlIj48ZyBpZD0iY2xvc2UiPjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iNDMuNSwxNC43IDQwLjMsMTEuNSAyNy41LDI0LjMgMTQuNywxMS41IDExLjUsMTQuNyAyNC4zLDI3LjUgMTEuNSw0MC4zIDE0LjcsNDMuNSAyNy41LDMwLjcgNDAuMyw0My41IDQzLjUsNDAuMyAzMC43LDI3LjUgIi8+PC9nPjwvc3ZnPg==) #575757;background-size:22px}.dy-full-width-notifications-close{top:5px;right:5px;z-index:1;border:none;transition:opacity .15s;-webkit-transition:opacity .15s;opacity:.7;width:18px;height:18px;cursor:pointer;border-radius:30px;background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTUgNTUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU1IDU1IiB4bWw6c3BhY2U9InByZXNlcnZlIj48ZyBpZD0iY2xvc2UiPjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iNDMuNSwxNC43IDQwLjMsMTEuNSAyNy41LDI0LjMgMTQuNywxMS41IDExLjUsMTQuNyAyNC4zLDI3LjUgMTEuNSw0MC4zIDE0LjcsNDMuNSAyNy41LDMwLjcgNDAuMyw0My41IDQzLjUsNDAuMyAzMC43LDI3LjUgIi8+PC9nPjwvc3ZnPg==) 2px no-repeat #575757;background-size:14px}.dy-full-width-notifications-close:hover{opacity:1}.dy_full_width_notifications_container{position:fixed;left:0;right:0;z-index:1040}.dy_full_width_notifications_container.dy_bottom_notification{bottom:0}.dy_full_width_notifications_container.dy_top_notification{top:0}.dy_full_width_notifications_container .dy_full_width_notification_instance{opacity:0;-webkit-transition:opacity .15s;transition:opacity .15s;position:relative}.dy_full_width_notifications_container .dy_full_width_notification_instance.dy_notification_instance_active{opacity:1}.dy_full_width_notifications_container .dy_full_width_notification_instance.dy_notification_from_bottom{-webkit-animation:dy_appear_from_bottom .25s;animation:dy_appear_from_bottom .25s}.dy_full_width_notifications_container .dy_full_width_notification_instance.dy_notification_from_top{-webkit-animation:dy_appear_from_top .25s;animation:dy_appear_from_top .25s}.dy_full_width_notifications_container .dy_full_width_notification_instance.dy_notification_instance_will_exit_top{-webkit-animation:dy_exit_top .25s;animation:dy_exit_top .25s;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards}.dy_full_width_notifications_container .dy_full_width_notification_instance.dy_notification_instance_will_exit_bottom{-webkit-animation:dy_exit_bottom .25s;animation:dy_exit_bottom .25s;animation-fill-mode:forwards;-webkit-animation-fill-mode:forwards}@-webkit-keyframes dy_appear_from_bottom{0%{-webkit-transform:translateY(100%);transform:translateY(100%)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes dy_appear_from_bottom{0%{-webkit-transform:translateY(100%);transform:translateY(100%)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes dy_appear_from_top{0%{-webkit-transform:translateY(-100%);transform:translateY(-100%)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes dy_appear_from_top{0%{-webkit-transform:translateY(-100%);transform:translateY(-100%)}100%{-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes dy_exit_top{100%{-webkit-transform:translateY(-100%);transform:translateY(-100%)}}@keyframes dy_exit_top{100%{-webkit-transform:translateY(-100%);transform:translateY(-100%)}}@-webkit-keyframes dy_exit_bottom{100%{-webkit-transform:translateY(100%);transform:translateY(100%)}}@keyframes dy_exit_bottom{100%{-webkit-transform:translateY(100%);transform:translateY(100%)}}.dy-modal-container{position:fixed;z-index:99999;top:0;left:0;bottom:0;right:0;width:100%;height:100%;display:table;-webkit-transition:opacity .2s ease;transition:opacity .2s ease}.dy-modal-container .dy-modal-backdrop{position:absolute;top:0;left:0;right:0;bottom:0;width:100%;height:100%;opacity:0;-webkit-transition:opacity .2s;transition:opacity .2s;background-color:#000}.dy-modal-container .dy-modal-wrapper{position:relative;z-index:1;display:table-cell;vertical-align:middle;text-align:center;width:100%}.dy-modal-container .dy-modal-wrapper.dy-modal-bottom{padding-bottom:20px;vertical-align:bottom}.dy-modal-container .dy-modal-wrapper.dy-modal-top{padding-top:20px;vertical-align:top}.dy-modal-container .dy-modal-wrapper .dy-modal-contents{position:relative;display:inline-block;-webkit-animation:dy-modal-enter .25s;animation:dy-modal-enter .25s;visibility:hidden}.dy-modal-container .dy-modal-wrapper .dy-modal-contents .dy-lb-close{z-index:1;top:-9px;right:-9px;border:none;opacity:.7;transition:opacity .15s;width:18px;height:18px;cursor:pointer;position:absolute;border-radius:30px;color:#fff;background:url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTUgNTUiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDU1IDU1IiB4bWw6c3BhY2U9InByZXNlcnZlIj48ZyBpZD0iY2xvc2UiPjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iNDMuNSwxNC43IDQwLjMsMTEuNSAyNy41LDI0LjMgMTQuNywxMS41IDExLjUsMTQuNyAyNC4zLDI3LjUgMTEuNSw0MC4zIDE0LjcsNDMuNSAyNy41LDMwLjcgNDAuMyw0My41IDQzLjUsNDAuMyAzMC43LDI3LjUgIi8+PC9nPjwvc3ZnPg==) 2px no-repeat #575757;background-size:14px}.dy-modal-container .dy-modal-wrapper .dy-modal-contents .dy-lb-close:hover{opacity:1}@-webkit-keyframes dy-modal-enter{0%{opacity:0;-webkit-transform:scale(.5);transform:scale(.5)}50%{-webkit-transform:scale(1.05);transform:scale(1.05)}85%{-webkit-transform:scale(1.1);transform:scale(1.1)}100%{opacity:1;-webkit-transform:scale(1);transform:scale(1)}}</style><script type="text/javascript" async="true" src="my_account_fichiers/st"></script><script type="text/javascript" async="true" src="my_account_fichiers/spa"></script><style data-di-track="1" data-di-rand="1591386751772" data-di-res-id="a88773e3-db371aa7">
+    .pushwoosh-subscription-segments-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      z-index: 2147483648;
+      opacity: 0.99;
+    }
+    
+    .pushwoosh-subscription-segments-popup_show {
+      display: block;
+    }
+    
+    .pushwoosh-subscription-segments-popup__wrapper {
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, .2);
+    }
+    
+    .pushwoosh-subscription-segments-popup_position_center .pushwoosh-subscription-segments-popup__wrapper {
+      text-align: center;
+    }
+    
+    .pushwoosh-subscription-segments-popup_position_center .pushwoosh-subscription-segments-popup__wrapper:after {
+      content: '';
+      display: inline-block;
+      width: 1px;
+      height: 100%;
+      vertical-align: middle;
+    }
+    
+    .pushwoosh-subscription-segments-popup__inner {
+      min-width: 320px;
+      max-width: 380px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    .pushwoosh-subscription-segments-popup_position_center .pushwoosh-subscription-segments-popup__inner {
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
+    .pushwoosh-subscription-segments-popup__body {
+      background: #fff;
+      text-align: left;
+      vertical-align: baseline;
+      box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1), 0px 0px 6px rgba(0, 0, 0, 0.06);
+      border-radius: 4px;
+    }
+    
+    .pushwoosh-subscription-segments-popup__close {
+      appearance: none;
+      border: none;
+      background-color: transparent;
+      box-shadow: none;
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+    
+    .pushwoosh-subscription-segments-popup__close:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 2px;
+      background-color: rgba(255, 255, 255, .8);
+      transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    }
+    
+    .pushwoosh-subscription-segments-popup__close:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 2px;
+      background-color: rgba(255, 255, 255, .8);
+      transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+    }
+  </style><style data-di-res-id="c77e26f9-572a4e91" data-di-rand="1591386765797">
+        .pushwoosh-in-app-modal-wrapper {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 99999999;
+          opacity: 0.999;
+          display:none;
+        }
+
+        .pushwoosh-in-app-modal-wrapper_state-show {
+          display: block;
+        }
+
+        .pushwoosh-in-app-modal-inner {
+          width: 100%;
+          height: 100%;
+        }
+
+        .pushwoosh-in-app-modal-inner_state-loading {
+          background-color: rgba(0, 0, 0, .8);
+        }
+        
+        .pushwoosh-in-app-modal-close-button {
+          appearance: none;
+          border: none;
+          background-color: transparent;
+          box-shadow: none;
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          width: 40px;
+          height: 40px;
+          cursor: pointer;
+        }
+        
+        .pushwoosh-in-app-modal-close-button:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left:50%;
+          width: 30px;
+          height: 2px;
+          background-color: rgba(255, 255, 255, .8);
+          transform: translateX(-50%) translateY(-50%) rotate(-45deg);
+        }
+        
+        .pushwoosh-in-app-modal-close-button:before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left:50%;
+          width: 30px;
+          height: 2px;
+          background-color: rgba(255, 255, 255, .8);
+          transform: translateX(-50%) translateY(-50%) rotate(45deg);
+        }
+
+        .pushwoosh-in-app-modal-inner_state-loading .pushwoosh-in-app-modal-loader {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .pushwoosh-in-app-modal-loader {
+          display: none;
+        }
+
+        .pushwoosh-in-app-modal-loader,
+        .pushwoosh-in-app-modal-loader:before,
+        .pushwoosh-in-app-modal-loader:after {
+          border-radius: 50%;
+          width: 2.5em;
+          height: 2.5em;
+          -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+          -webkit-animation: pushwoosh-in-app-modal-loader 1.8s infinite ease-in-out;
+          animation: pushwoosh-in-app-modal-loader 1.8s infinite ease-in-out;
+        }
+
+        .pushwoosh-in-app-modal-loader {
+          color: #ffffff;
+          font-size: 10px;
+          text-indent: -9999em;
+          -webkit-transform: translateZ(0);
+          -ms-transform: translateZ(0);
+          transform: translateZ(0);
+          -webkit-animation-delay: -0.16s;
+          animation-delay: -0.16s;
+        }
+
+        .pushwoosh-in-app-modal-loader:before,
+        .pushwoosh-in-app-modal-loader:after {
+          content: '';
+          position: absolute;
+          top: 0;
+        }
+
+        .pushwoosh-in-app-modal-loader:before {
+          left: -3.5em;
+          -webkit-animation-delay: -0.32s;
+          animation-delay: -0.32s;
+        }
+
+        .pushwoosh-in-app-modal-loader:after {
+          left: 3.5em;
+        }
+
+        @-webkit-keyframes pushwoosh-in-app-modal-loader {
+          0%,
+          80%,
+          100% {
+            box-shadow: 0 2.5em 0 -1.3em rgba(255, 255, 255, 1);
+          }
+          40% {
+            box-shadow: 0 2.5em 0 0 rgba(255, 255, 255, 1);
+          }
+        }
+
+        @keyframes pushwoosh-in-app-modal-loader {
+          0%,
+          80%,
+          100% {
+            box-shadow: 0 2.5em 0 -1.3em rgba(255, 255, 255, 1);
+          }
+          40% {
+            box-shadow: 0 2.5em 0 0 rgba(255, 255, 255, 1);
+          }
+        }
+
+        .pushwoosh-in-app-modal-iframe {
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          border: none;
+          display: none;
+        }
+
+        .pushwoosh-in-app-modal-iframe_state-show {
+          display: block;
+        }
+      </style></head>
+<body class="animated  fadeIn mobile tablet" autoscroll="true" data-style="direction: ltr" ng-class="{'arabic-font-family':direction == 'rtl','default-font-family':direction == 'ltr', 'avajapan':IsAvaJapan, 'ava-device-tablet':mobileConfig.isTablet, 'ava-device-mobile':mobileConfig.isMobile }">
+    <!-- Google Tag Manager --><noscript><iframe src="//www.googletagmanager.com/ns.html?id="GTM-KLRBJ5" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript> <script>(function (w, d, s, l, i) {w[l] = w[l] || []; w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'}); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);})(window, document, 'script', 'dataLayer','GTM-KLRBJ5');</script><!-- End Google Tag Manager -->
+    <!--<div class="progressLoading" ng-if="isFirstLoading">
+        <div class="firstLogIn">
+            <div class="load8">
+                <div class="loader"></div>
+                <div id="firstLoading" class="loading">
+                    <div class="hide" id="loading_PreparingAccount">Preparing your account</div>
+                    <div>please wait<span>.</span><span>.</span><span>.</span></div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+
+    <!-- ngIf: isFirstLoading || isLoading -->
+     <pushwoosh-subscription-widget><div id="widget" class="widget"> <div id="subscription-widget-root" class="subscription-widget"> <div class="subscription-widget__body"> <div class="subscription-widget__header"> Subscribe to our news </div> <div class="subscription-widget__description"> Don't miss out on the latest news and updates! </div> <div class="subscription-widget__controls"> <button class="subscription-widget__control subscription-widget__control_decline" ng-click="$ctrl.dismiss()" type="button" id="subscription-widget-decline" data-di-id="#subscription-widget-decline"> Deny </button> <button class="subscription-widget__control subscription-widget__control_accept" onclick="Pushwoosh.subscribe()" type="button" id="subscription-widget-accept" data-di-id="#subscription-widget-accept"> Agree </button> </div> </div> </div> </div></pushwoosh-subscription-widget>
+    <div class="">
+        <!--<div class="progressLoading" ng-if="isLoading">
+            <div class="load8">
+                <div class="loader"></div>
+                <div class="loading">
+                    <div ng-if="loadingText">{{ loadingText | translate}}</div>
+                    <div>{{'buttonPending'  | translate}}<span>.</span><span>.</span><span>.</span></div>
+                </div>
+            </div>
+        </div>-->
+        <!-- ngIf: backgrounDrop -->
+        <!-- ngIf: isMobileAny -->
+        <div id="mainWrapper" ng-class="{'flex-wrapper': mobileConfig.isMobile, ltr: 'ltr'==direction,rtl: 'rtl'==direction}" ng-show="!isSessionExpiredOpend" class="ltr">
+            <div ng-controller="HeaderCtrl as header" class="main-row header-container" ng-class="{'hidden': isMaintenancePage}">
+                <!-- banners Mobile -->
+                <!-- ngIf: mobileConfig.isMobile && $state.current.name === 'my_account' -->
+                <!-- banners Mobile -->
+                <div height-watcher="" is-mobile="mobileConfig.isMobile" is-tablet="mobileConfig.isTablet">
+                    <!-- ngIf: !hideElements.HideHeader && registerTypOn --><header ng-if="!hideElements.HideHeader &amp;&amp; registerTypOn" class="main-header">
+                        <div class="container index-bodyContainer">
+                            <div class="row main-header-row">
+                                <!-- ngIf: auth.isLoggedIn && !hideElements.HideHamburger --><div ng-if="auth.isLoggedIn &amp;&amp; !hideElements.HideHamburger" class="col-xs-2 visible-xs visible-sm visible-md">
+                                    <div class="navbar-header pull-left">
+                                        <button ng-show="header.isShowHamburger" ng-click="header.isShowHamburger=!header.isShowHamburger" type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse" data-di-id="#gen_">
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                        <button ng-show="!header.isShowHamburger" ng-click="header.isShowHamburger=!header.isShowHamburger" type="button" class="navbar-toggle-x font-bold ng-hide" data-toggle="collapse" data-target=".navbar-collapse" data-di-id="#gen_">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                                    </div>
+                                </div><!-- end ngIf: auth.isLoggedIn && !hideElements.HideHamburger -->
+                                <div class="col-md-6 col-xs-8" ng-class="{'col-xs-8': auth.isLoggedIn, 'col-xs-10':  !auth.isLoggedIn}">
+                                    <img ng-click="header.goToWhiteLabelSite()" id="AvaTradeLogo" src="my_account_fichiers/AvaTrade_logo_2012-1.png" class="avaTrade-logo ava-logo" ng-class="{'atrade-logo': IsATrade, 'ava-logo': IsAvaTrade || IsAvaJapan, 'friedberg-logo': IsFriedbergDirectAVA}">
+                                </div>
+                                <div class="col-md-6 hidden-print hidden-xs hidden-sm hidden-md">
+                                    <ul class="right-icons pull-right" ng-class="{'pull-right':direction == 'ltr','pull-left': direction == 'rtl'}" style="margin-right: 106px;">
+                                        <!-- ngIf: auth.isLoggedIn --><li ng-if="auth.isLoggedIn">
+                                            <!--<img src="myava/images/logout_icon.png" class="icon-padding-left" />-->
+                                            <svg class="icon-svg" width="1.6em" height="1.6em" data-di-rand="1591386751822" data-di-res-id="8384e1a8-9e3f77e3"><use xlink:href="/images/icon_sprite.svg#logout"></use></svg>
+                                        </li><!-- end ngIf: auth.isLoggedIn -->
+                                        <!-- ngIf: auth.isLoggedIn --><li id="logOut" class="text icon-padding-left log-out-icon" ng-click="auth.logOut()" ng-if="auth.isLoggedIn">Déconnexion</li><!-- end ngIf: auth.isLoggedIn -->
+                                    </ul>
+                                </div>
+                                <div class="col-xs-2 hidden-print visible-xs">
+                                    <span class="glyphicon glyphicon-earphone help-icon" ng-click="header.openChatWindow()" data-di-id="#gen_col-Xs-2Hidden-PrintVisible-Xs"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </header><!-- end ngIf: !hideElements.HideHeader && registerTypOn -->
+                    <!-- ngIf: !hideElements.HideSubHeader --><div ng-if="!hideElements.HideSubHeader" ng-show="registerTypOn" class="row main-profile-nav-cnt main-profile-nav hidden-print" ng-class="{'webTrader-container':wtContainer, 'praxis': isDepositPraxis}">
+                        <div class="container index-bodyContainer">
+                            <div class="row">
+                                <div class="col-md-6 col-xs-6 subHeader-Welcom-pdlz">
+                                    <div id="welcomeText" class="welcom fadeInLeft  animated">Bienvenue, Siaka Diarrassouba<!--<span ng-if="$root.IsAvaJapan && header.userProfile"> {{ 'Mr' | translate }}</span>--></div>
+                                </div>
+
+                                <div class="col-md-offset-2 col-md-4 col-xs-6 total-balance-container">
+                                    <header-balance is-mobile="mobileConfig.isMobile"><timer> <!-- ngIf: $ctrl.isLoggedIn && $ctrl.CurrencyGroups --><div ng-if="$ctrl.isLoggedIn &amp;&amp; $ctrl.CurrencyGroups" class="balance balance-pad flex" style=""> <div> <!--<img style="padding-left: 4px; cursor: pointer" src="/images/refresh1.png" id="balanceRefresh" ng-class="{spin: $root.isBalanceLoading}" alt="" ng-click="$ctrl.refreshEquity()" />--> <!--<i class="fa fa-refresh cursor-pointer" id=" balancerefresh" aria-hidden="true" ng-class="{'fa-spin': $root.isBalanceLoading}" ng-click="$ctrl.refreshEquity()"></i>--> Total des capitaux nets: <!-- ngRepeat: balance in $ctrl.CurrencyGroups --><span class="balance" ng-repeat="balance in $ctrl.CurrencyGroups" style="" data-di-id="#gen_$41.18"> <!-- ngIf: !$first --> <span id="balance_currency_0">$41.18 </span> </span><!-- end ngRepeat: balance in $ctrl.CurrencyGroups --> <!--<img class="beta" src="/images/beta.png" />--> <!--        <table border="1">
+					<tr class="rowClass">
+						<td class="cellClass">
+							<div class="divClass totalBalanceFrequency"><span>{{'subHeader_informationUpdateFrequency' |translate }}</span></div>
+						</td>
+						<td class="cellClass">
+							<countdown-timer></countdown-timer>
+						</td>
+					</tr>
+				</table>--> <div style="display: flex" ng-show="$ctrl.ifShowTimer" class="ng-hide"> <div class="totalBalanceFrequency"><span data-di-id="#gen_cetteInformationSeraMiseàJourDans">Cette information sera mise à jour dans</span></div> <div class="countDownd-container"> <countdown-timer><dy-flip-clock countdown="true" time="19000"><div class="dy-flip-clock">
+  <dy-flip-clock-number value="vm.getMinutesTensPlace()"><ul class="dy-flip-clock-number" ng-class="{'dy-flip-clock-number-animated': vm.isAnimated()}">
+  <!-- ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit dy-flip-clock-number-digit-active" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">0</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">0</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">1</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">1</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">2</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">2</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">3</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">3</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">4</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">4</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">5</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">5</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">6</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">6</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">7</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">7</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">8</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">8</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">9</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">9</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers -->
+</ul>
+</dy-flip-clock-number>
+  <dy-flip-clock-number value="vm.getMinutesOnesPlace()"><ul class="dy-flip-clock-number dy-flip-clock-number-animated" ng-class="{'dy-flip-clock-number-animated': vm.isAnimated()}" style="">
+  <!-- ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit dy-flip-clock-number-digit-active" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">0</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">0</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit dy-flip-clock-number-digit-before" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">1</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">1</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">2</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">2</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">3</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">3</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">4</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">4</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">5</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">5</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">6</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">6</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">7</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">7</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">8</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">8</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">9</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">9</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers -->
+</ul>
+</dy-flip-clock-number>
+
+  <dy-flip-clock-label text=""><span class="dy-flip-clock-divider" ng-class="{'dy-flip-clock-divider-hidden': !!vm.hideDivider}" data-di-id="#gen_">
+  <span class="dy-flip-clock-label"></span>
+  <span class="dy-flip-clock-dot dy-flip-clock-dot-top"></span>
+  <span class="dy-flip-clock-dot dy-flip-clock-dot-bottom"></span>
+</span>
+</dy-flip-clock-label>
+  <dy-flip-clock-number value="vm.getSecondsTensPlace()"><ul class="dy-flip-clock-number dy-flip-clock-number-animated" ng-class="{'dy-flip-clock-number-animated': vm.isAnimated()}" style="">
+  <!-- ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">0</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">0</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit ng-animate dy-flip-clock-number-digit-active-add dy-flip-clock-number-digit-active dy-flip-clock-number-digit-active-add-active" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="" data-ng-animate="2">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">1</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">1</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit dy-flip-clock-number-digit-before" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">2</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">2</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">3</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">3</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">4</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">4</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">5</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">5</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">6</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">6</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">7</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">7</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">8</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">8</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">9</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">9</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers -->
+</ul>
+</dy-flip-clock-number>
+  <dy-flip-clock-number value="vm.getSecondsOnesPlace()"><ul class="dy-flip-clock-number dy-flip-clock-number-animated" ng-class="{'dy-flip-clock-number-animated': vm.isAnimated()}" style="">
+  <!-- ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit dy-flip-clock-number-digit-active-add dy-flip-clock-number-digit-active-add-active dy-flip-clock-number-digit-before" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">0</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">0</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit dy-flip-clock-number-digit-active-add dy-flip-clock-number-digit-active-add-active" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">1</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">1</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit dy-flip-clock-number-digit-active-add dy-flip-clock-number-digit-active-add-active" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">2</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">2</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit dy-flip-clock-number-digit-active-add dy-flip-clock-number-digit-active-add-active" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">3</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">3</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit dy-flip-clock-number-digit-active-add dy-flip-clock-number-digit-active-add-active" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">4</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">4</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit dy-flip-clock-number-digit-active-add dy-flip-clock-number-digit-active-add-active" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">5</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">5</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit dy-flip-clock-number-digit-active-add dy-flip-clock-number-digit-active-add-active" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">6</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">6</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit dy-flip-clock-number-digit-active-add dy-flip-clock-number-digit-active-add-active" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">7</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">7</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit dy-flip-clock-number-digit-active-add dy-flip-clock-number-digit-active-add-active" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">8</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">8</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers --><li ng-repeat="number in ::vm.numbers" class="dy-flip-clock-number-digit dy-flip-clock-number-digit-active-add dy-flip-clock-number-digit-active-add-active ng-animate dy-flip-clock-number-digit-active" ng-class="{'dy-flip-clock-number-digit-active': vm.isActive(number), 'dy-flip-clock-number-digit-before': vm.isBefore(number)}" style="" data-ng-animate="2">
+    <div class="dy-flip-clock-card">
+      <div class="dy-flip-clock-card-up">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-up">9</div>
+      </div>
+      <div class="dy-flip-clock-card-down">
+        <div class="dy-flip-clock-card-shadow"></div>
+        <div class="dy-flip-clock-card-value dy-flip-clock-card-value-down">9</div>
+      </div>
+    </div>
+  </li><!-- end ngRepeat: number in ::vm.numbers -->
+</ul>
+</dy-flip-clock-number>
+  
+</div>
+</dy-flip-clock></countdown-timer> </div> </div> </div> </div>
+</timer></header-balance>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container index-bodyMarginTop index-bodyContainer" ng-hide="vueAvaIframeFullView" ng-class="{ 'index-bodyContainer': auth.isLoggedIn &amp;&amp; !auth.isWebTraderShortDemoToReal(), 'wm-wtiframe':auth.isWebTrader}" id="main-container" style="">
+                <div class="row main-content-row">
+                    <!-- ngIf: !hideElements.HideLeftSideMenu --><div class="col-md-2 hidden-print left-menu-holder" ng-if="!hideElements.HideLeftSideMenu" ng-show="auth.isLoggedIn &amp;&amp; registerTypOn">
+                        <side-menu-cmp is-atrade="IsATrade"><aside class="main-aside-nav animated fadeIn" ng-class="{'collapse navbar-collapse':$ctrl.mobileConfig.isMobile || $ctrl.mobileConfig.isTablet}"> <div ng-click="$ctrl.updateIsShowHamburger()" class="nav"> <ul class="main-aside-ul"> <!-- ngRepeat: menuItem in $ctrl.menuItems --><li ng-repeat="menuItem in $ctrl.menuItems" id="sideMenu1" class="main-aside-btn main-aside-li selected" ng-class="{'selected':$ctrl.activeItemId==menuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled':$ctrl.sideMenuDisable, 'menuTop':(menuItem.previousMenuActive &amp;&amp; !$ctrl.mobileConfig.isMobile)}" style=""> <a data-target=".navbar-collapse" id="menuItem1" data-toggle="collapse" href="https://myvip.avatrade.fr/my_account" href-target="" urltarget="menuItem.Target" class="menu-item-link" data-di-id="#menuItem1"> <table class="logo-text-table ng-hide" ng-show="$ctrl.mobileConfig.isMobile || $ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751875" data-di-res-id="6e0f3104-7889a98"><use xlink:href="/images/icon_sprite.svg#my_account" data-ng-href="/images/icon_sprite.svg#my_account"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Mon compte</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751875" data-di-res-id="d6b35661-f647b10e"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt; 0" class="ng-hide"> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> </tr> </tbody></table> <table class="logo-text-table" ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751876" data-di-res-id="c406f98f-76f5080a"><use xlink:href="/images/icon_sprite.svg#my_account" data-ng-href="/images/icon_sprite.svg#my_account"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Mon compte</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751877" data-di-res-id="7cba9eea-bb83b997"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet &amp;&amp; menuItem.SubMenuItems.length &gt; 0 " class="ng-hide"> <!--<img ng-src="{{menuItem.subMenuActive? '/images/arrow-down.png' : '/images/arrow-up.png'}}" class="arrow-submenu" />--> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-up': menuItem.subMenuActive, 'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> <td ng-show="menuItem.Indicator != null" class="ng-hide"> <div ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt;0" class="circle-indicator ng-hide"> <span class="text"></span> </div> </td> <!-- ngIf: menuItem.SubMenuItems.length > 0 --> </tr> </tbody></table> </a> <ul class="main-aside-ul child ng-hide" ng-show="false"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> <ul class="main-aside-ul child ng-hide" ng-show="menuItem.subMenuActive &amp;&amp; !($ctrl.mobileConfig.isMobile)"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> </li><!-- end ngRepeat: menuItem in $ctrl.menuItems --><li ng-repeat="menuItem in $ctrl.menuItems" id="sideMenu2" class="main-aside-btn main-aside-li" ng-class="{'selected':$ctrl.activeItemId==menuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled':$ctrl.sideMenuDisable, 'menuTop':(menuItem.previousMenuActive &amp;&amp; !$ctrl.mobileConfig.isMobile)}" style=""> <a data-target=".navbar-collapse" id="menuItem2" data-toggle="collapse" href="https://myvip.avatrade.fr/personal_details" href-target="" urltarget="menuItem.Target" class="menu-item-link" data-di-id="#menuItem2"> <table class="logo-text-table ng-hide" ng-show="$ctrl.mobileConfig.isMobile || $ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751879" data-di-res-id="9c65e9d9-49accda8"><use xlink:href="/images/icon_sprite.svg#personal" data-ng-href="/images/icon_sprite.svg#personal"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Informations personnelles</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751880" data-di-res-id="633d3182-4381918b"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt; 0" class="ng-hide"> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> </tr> </tbody></table> <table class="logo-text-table" ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751881" data-di-res-id="db8156e7-346c7861"><use xlink:href="/images/icon_sprite.svg#personal" data-ng-href="/images/icon_sprite.svg#personal"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Informations personnelles</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751882" data-di-res-id="c934f909-d2b73057"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet &amp;&amp; menuItem.SubMenuItems.length &gt; 0 " class="ng-hide"> <!--<img ng-src="{{menuItem.subMenuActive? '/images/arrow-down.png' : '/images/arrow-up.png'}}" class="arrow-submenu" />--> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-up': menuItem.subMenuActive, 'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> <td ng-show="menuItem.Indicator != null" class="ng-hide"> <div ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt;0" class="circle-indicator ng-hide"> <span class="text"></span> </div> </td> <!-- ngIf: menuItem.SubMenuItems.length > 0 --> </tr> </tbody></table> </a> <ul class="main-aside-ul child ng-hide" ng-show="false"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> <ul class="main-aside-ul child ng-hide" ng-show="menuItem.subMenuActive &amp;&amp; !($ctrl.mobileConfig.isMobile)"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> </li><!-- end ngRepeat: menuItem in $ctrl.menuItems --><li ng-repeat="menuItem in $ctrl.menuItems" id="sideMenu3" class="main-aside-btn main-aside-li" ng-class="{'selected':$ctrl.activeItemId==menuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled':$ctrl.sideMenuDisable, 'menuTop':(menuItem.previousMenuActive &amp;&amp; !$ctrl.mobileConfig.isMobile)}"> <a data-target=".navbar-collapse" id="menuItem3" data-toggle="collapse" href="" href-target="" urltarget="menuItem.Target" class="menu-item-link" data-di-id="#menuItem3"> <table class="logo-text-table ng-hide" ng-show="$ctrl.mobileConfig.isMobile || $ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751884" data-di-res-id="ec5fa6d5-bf97c9db"><use xlink:href="/images/icon_sprite.svg#deposit" data-ng-href="/images/icon_sprite.svg#deposit"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Dépôt</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751885" data-di-res-id="54e3c1b0-c2906f24"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt; 0" class="ng-hide"> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> </tr> </tbody></table> <table class="logo-text-table" ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751886" data-di-res-id="46566e5e-8a9fa33b"><use xlink:href="/images/icon_sprite.svg#deposit" data-ng-href="/images/icon_sprite.svg#deposit"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Dépôt</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751886" data-di-res-id="46566e5e-cbd9531a"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet &amp;&amp; menuItem.SubMenuItems.length &gt; 0 " class=""> <!--<img ng-src="{{menuItem.subMenuActive? '/images/arrow-down.png' : '/images/arrow-up.png'}}" class="arrow-submenu" />--> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-up': menuItem.subMenuActive, 'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> <td ng-show="menuItem.Indicator != null" class=""> <div ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt;0" class="circle-indicator ng-hide"> <span class="text">0</span> </div> </td> <!-- ngIf: menuItem.SubMenuItems.length > 0 --><td class="arrow-glyphicon" ng-if="menuItem.SubMenuItems.length &gt; 0"> <span class="arrow-right hidden-xs"></span> <span class="glyphicon visible-xs visible-sm visible-md visible-md pull-right glyphicon-menu-right" ng-class="{'glyphicon-menu-right':$ctrl.isLeftOrRight=='ltr','glyphicon-menu-left':$ctrl.isLeftOrRight=='rtl'}"></span> </td><!-- end ngIf: menuItem.SubMenuItems.length > 0 --> </tr> </tbody></table> </a> <ul class="main-aside-ul child ng-hide" ng-show="false"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --><li ng-repeat="submenuItem in menuItem.SubMenuItems" id="sideMenu12" class="main-aside-btn main-aside-li" ng-class="{'selected':$ctrl.activeItemId==submenuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled': (($ctrl.sideMenuDisable) || (submenuItem.Indicator != null &amp;&amp; $ctrl.userProfile[submenuItem.Indicator].length == 0))}" ng-click="$ctrl.checkSubMenu($index,$parent.$index)"> <a data-target=".navbar-collapse" id="menuItem12" data-toggle="collapse" href="https://myvip.avatrade.fr/deposit" href-target="" urltarget="submenuItem.Target" class="menu-item-link" data-di-id="#menuItem12"> <table class="logo-text-table"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==submenuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+submenuItem.ActiveIcon  || '/images/'+submenuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751889" data-di-res-id="1e357e08-fc9c0692"><use xlink:href="/images/icon_sprite.svg#" data-ng-href="/images/icon_sprite.svg#"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Approvisionnez votre compte</span> <!-- ngIf: submenuItem.Subtitle --> </td> <td ng-show="submenuItem.Indicator != null" class="ng-hide"> <div ng-show="$ctrl.userProfile[submenuItem.Indicator].length" class="circle-indicator ng-hide"> <span class="text"></span> </div> </td> </tr> </tbody></table> </a> </li><!-- end ngRepeat: submenuItem in menuItem.SubMenuItems --><li ng-repeat="submenuItem in menuItem.SubMenuItems" id="sideMenu11" class="main-aside-btn main-aside-li disabled" ng-class="{'selected':$ctrl.activeItemId==submenuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled': (($ctrl.sideMenuDisable) || (submenuItem.Indicator != null &amp;&amp; $ctrl.userProfile[submenuItem.Indicator].length == 0))}" ng-click="$ctrl.checkSubMenu($index,$parent.$index)"> <a data-target=".navbar-collapse" id="menuItem11" data-toggle="collapse" href="https://myvip.avatrade.fr/pending-deposit" href-target="" urltarget="submenuItem.Target" class="menu-item-link" data-di-id="#menuItem11"> <table class="logo-text-table"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==submenuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+submenuItem.ActiveIcon  || '/images/'+submenuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751890" data-di-res-id="8c8b4c70-9b38d016"><use xlink:href="/images/icon_sprite.svg#" data-ng-href="/images/icon_sprite.svg#"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Dépôts en attente</span> <!-- ngIf: submenuItem.Subtitle --> </td> <td ng-show="submenuItem.Indicator != null" class=""> <div ng-show="$ctrl.userProfile[submenuItem.Indicator].length" class="circle-indicator ng-hide"> <span class="text">0</span> </div> </td> </tr> </tbody></table> </a> </li><!-- end ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> <ul class="main-aside-ul child ng-hide" ng-show="menuItem.subMenuActive &amp;&amp; !($ctrl.mobileConfig.isMobile)"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --><li ng-repeat="submenuItem in menuItem.SubMenuItems" id="sideMenu12" class="main-aside-btn main-aside-li" ng-class="{'selected':$ctrl.activeItemId==submenuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled': (($ctrl.sideMenuDisable) || (submenuItem.Indicator != null &amp;&amp; $ctrl.userProfile[submenuItem.Indicator].length == 0))}" ng-click="$ctrl.checkSubMenu($index,$parent.$index)"> <a data-target=".navbar-collapse" id="menuItem12" data-toggle="collapse" href="https://myvip.avatrade.fr/deposit" href-target="" urltarget="submenuItem.Target" class="menu-item-link" data-di-id="#menuItem12"> <table class="logo-text-table"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==submenuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+submenuItem.ActiveIcon  || '/images/'+submenuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751891" data-di-res-id="e6e17f57-286129c0"><use xlink:href="/images/icon_sprite.svg#" data-ng-href="/images/icon_sprite.svg#"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Approvisionnez votre compte</span> <!-- ngIf: submenuItem.Subtitle --> </td> <td ng-show="submenuItem.Indicator != null" class="ng-hide"> <div ng-show="$ctrl.userProfile[submenuItem.Indicator].length" class="circle-indicator ng-hide"> <span class="text"></span> </div> </td> <td class="arrow-glyphicon"> <span class="arrow-right hidden-xs"></span> <span class="glyphicon visible-xs visible-sm visible-md visible-md pull-right glyphicon-menu-right" ng-class="{'glyphicon-menu-right':$ctrl.isLeftOrRight=='ltr','glyphicon-menu-left':$ctrl.isLeftOrRight=='rtl'}"></span> </td> </tr> </tbody></table> </a> </li><!-- end ngRepeat: submenuItem in menuItem.SubMenuItems --><li ng-repeat="submenuItem in menuItem.SubMenuItems" id="sideMenu11" class="main-aside-btn main-aside-li disabled" ng-class="{'selected':$ctrl.activeItemId==submenuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled': (($ctrl.sideMenuDisable) || (submenuItem.Indicator != null &amp;&amp; $ctrl.userProfile[submenuItem.Indicator].length == 0))}" ng-click="$ctrl.checkSubMenu($index,$parent.$index)"> <a data-target=".navbar-collapse" id="menuItem11" data-toggle="collapse" href="https://myvip.avatrade.fr/pending-deposit" href-target="" urltarget="submenuItem.Target" class="menu-item-link" data-di-id="#menuItem11"> <table class="logo-text-table"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==submenuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+submenuItem.ActiveIcon  || '/images/'+submenuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751893" data-di-res-id="4ce8b7dc-20ee07f"><use xlink:href="/images/icon_sprite.svg#" data-ng-href="/images/icon_sprite.svg#"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Dépôts en attente</span> <!-- ngIf: submenuItem.Subtitle --> </td> <td ng-show="submenuItem.Indicator != null" class=""> <div ng-show="$ctrl.userProfile[submenuItem.Indicator].length" class="circle-indicator ng-hide"> <span class="text">0</span> </div> </td> <td class="arrow-glyphicon"> <span class="arrow-right hidden-xs"></span> <span class="glyphicon visible-xs visible-sm visible-md visible-md pull-right glyphicon-menu-right" ng-class="{'glyphicon-menu-right':$ctrl.isLeftOrRight=='ltr','glyphicon-menu-left':$ctrl.isLeftOrRight=='rtl'}"></span> </td> </tr> </tbody></table> </a> </li><!-- end ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> </li><!-- end ngRepeat: menuItem in $ctrl.menuItems --><li ng-repeat="menuItem in $ctrl.menuItems" id="sideMenu4" class="main-aside-btn main-aside-li" ng-class="{'selected':$ctrl.activeItemId==menuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled':$ctrl.sideMenuDisable, 'menuTop':(menuItem.previousMenuActive &amp;&amp; !$ctrl.mobileConfig.isMobile)}"> <a data-target=".navbar-collapse" id="menuItem4" data-toggle="collapse" href="https://myvip.avatrade.fr/upload_document" href-target="" urltarget="menuItem.Target" class="menu-item-link" data-di-id="#menuItem4"> <table class="logo-text-table ng-hide" ng-show="$ctrl.mobileConfig.isMobile || $ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751895" data-di-res-id="6983e800-3e8d7236"><use xlink:href="/images/icon_sprite.svg#docs" data-ng-href="/images/icon_sprite.svg#docs"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Télécharger le document</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751896" data-di-res-id="7b3647ee-63abcf23"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt; 0" class="ng-hide"> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> </tr> </tbody></table> <table class="logo-text-table" ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751896" data-di-res-id="7b3647ee-d2a32e0a"><use xlink:href="/images/icon_sprite.svg#docs" data-ng-href="/images/icon_sprite.svg#docs"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Télécharger le document</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751897" data-di-res-id="c38a208b-499a7300"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet &amp;&amp; menuItem.SubMenuItems.length &gt; 0 " class="ng-hide"> <!--<img ng-src="{{menuItem.subMenuActive? '/images/arrow-down.png' : '/images/arrow-up.png'}}" class="arrow-submenu" />--> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-up': menuItem.subMenuActive, 'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> <td ng-show="menuItem.Indicator != null" class="ng-hide"> <div ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt;0" class="circle-indicator ng-hide"> <span class="text"></span> </div> </td> <!-- ngIf: menuItem.SubMenuItems.length > 0 --> </tr> </tbody></table> </a> <ul class="main-aside-ul child ng-hide" ng-show="false"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> <ul class="main-aside-ul child ng-hide" ng-show="menuItem.subMenuActive &amp;&amp; !($ctrl.mobileConfig.isMobile)"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> </li><!-- end ngRepeat: menuItem in $ctrl.menuItems --><li ng-repeat="menuItem in $ctrl.menuItems" id="sideMenu5" class="main-aside-btn main-aside-li" ng-class="{'selected':$ctrl.activeItemId==menuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled':$ctrl.sideMenuDisable, 'menuTop':(menuItem.previousMenuActive &amp;&amp; !$ctrl.mobileConfig.isMobile)}"> <a data-target=".navbar-collapse" id="menuItem5" data-toggle="collapse" href="" href-target="" urltarget="menuItem.Target" class="menu-item-link" data-di-id="#menuItem5"> <table class="logo-text-table ng-hide" ng-show="$ctrl.mobileConfig.isMobile || $ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751898" data-di-res-id="c38a208b-1f40a8ca"><use xlink:href="/images/icon_sprite.svg#withdrawl" data-ng-href="/images/icon_sprite.svg#withdrawl"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Retirer des fonds</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751898" data-di-res-id="9be930dd-b143ae3a"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt; 0" class="ng-hide"> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> </tr> </tbody></table> <table class="logo-text-table" ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751899" data-di-res-id="235557b8-8adf2d28"><use xlink:href="/images/icon_sprite.svg#withdrawl" data-ng-href="/images/icon_sprite.svg#withdrawl"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Retirer des fonds</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751900" data-di-res-id="9811a9e6-3b8cc97f"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet &amp;&amp; menuItem.SubMenuItems.length &gt; 0 " class=""> <!--<img ng-src="{{menuItem.subMenuActive? '/images/arrow-down.png' : '/images/arrow-up.png'}}" class="arrow-submenu" />--> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-up': menuItem.subMenuActive, 'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> <td ng-show="menuItem.Indicator != null" class=""> <div ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt;0" class="circle-indicator ng-hide"> <span class="text">0</span> </div> </td> <!-- ngIf: menuItem.SubMenuItems.length > 0 --><td class="arrow-glyphicon" ng-if="menuItem.SubMenuItems.length &gt; 0"> <span class="arrow-right hidden-xs"></span> <span class="glyphicon visible-xs visible-sm visible-md visible-md pull-right glyphicon-menu-right" ng-class="{'glyphicon-menu-right':$ctrl.isLeftOrRight=='ltr','glyphicon-menu-left':$ctrl.isLeftOrRight=='rtl'}"></span> </td><!-- end ngIf: menuItem.SubMenuItems.length > 0 --> </tr> </tbody></table> </a> <ul class="main-aside-ul child ng-hide" ng-show="false"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --><li ng-repeat="submenuItem in menuItem.SubMenuItems" id="sideMenu9" class="main-aside-btn main-aside-li disabled" ng-class="{'selected':$ctrl.activeItemId==submenuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled': (($ctrl.sideMenuDisable) || (submenuItem.Indicator != null &amp;&amp; $ctrl.userProfile[submenuItem.Indicator].length == 0))}" ng-click="$ctrl.checkSubMenu($index,$parent.$index)"> <a data-target=".navbar-collapse" id="menuItem9" data-toggle="collapse" href="https://myvip.avatrade.fr/pending_withdrawl" href-target="" urltarget="submenuItem.Target" class="menu-item-link" data-di-id="#menuItem9"> <table class="logo-text-table"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==submenuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+submenuItem.ActiveIcon  || '/images/'+submenuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751901" data-di-res-id="20adce83-dac7e8b5"><use xlink:href="/images/icon_sprite.svg#" data-ng-href="/images/icon_sprite.svg#"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Retraits en attente</span> <!-- ngIf: submenuItem.Subtitle --> </td> <td ng-show="submenuItem.Indicator != null" class=""> <div ng-show="$ctrl.userProfile[submenuItem.Indicator].length" class="circle-indicator ng-hide"> <span class="text">0</span> </div> </td> </tr> </tbody></table> </a> </li><!-- end ngRepeat: submenuItem in menuItem.SubMenuItems --><li ng-repeat="submenuItem in menuItem.SubMenuItems" id="sideMenu10" class="main-aside-btn main-aside-li" ng-class="{'selected':$ctrl.activeItemId==submenuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled': (($ctrl.sideMenuDisable) || (submenuItem.Indicator != null &amp;&amp; $ctrl.userProfile[submenuItem.Indicator].length == 0))}" ng-click="$ctrl.checkSubMenu($index,$parent.$index)"> <a data-target=".navbar-collapse" id="menuItem10" data-toggle="collapse" href="https://myvip.avatrade.fr/withdrawl_funds" href-target="" urltarget="submenuItem.Target" class="menu-item-link" data-di-id="#menuItem10"> <table class="logo-text-table"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==submenuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+submenuItem.ActiveIcon  || '/images/'+submenuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751902" data-di-res-id="3218616d-7454758a"><use xlink:href="/images/icon_sprite.svg#" data-ng-href="/images/icon_sprite.svg#"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Retirez vos fonds</span> <!-- ngIf: submenuItem.Subtitle --> </td> <td ng-show="submenuItem.Indicator != null" class="ng-hide"> <div ng-show="$ctrl.userProfile[submenuItem.Indicator].length" class="circle-indicator ng-hide"> <span class="text"></span> </div> </td> </tr> </tbody></table> </a> </li><!-- end ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> <ul class="main-aside-ul child ng-hide" ng-show="menuItem.subMenuActive &amp;&amp; !($ctrl.mobileConfig.isMobile)"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --><li ng-repeat="submenuItem in menuItem.SubMenuItems" id="sideMenu9" class="main-aside-btn main-aside-li disabled" ng-class="{'selected':$ctrl.activeItemId==submenuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled': (($ctrl.sideMenuDisable) || (submenuItem.Indicator != null &amp;&amp; $ctrl.userProfile[submenuItem.Indicator].length == 0))}" ng-click="$ctrl.checkSubMenu($index,$parent.$index)"> <a data-target=".navbar-collapse" id="menuItem9" data-toggle="collapse" href="https://myvip.avatrade.fr/pending_withdrawl" href-target="" urltarget="submenuItem.Target" class="menu-item-link" data-di-id="#menuItem9"> <table class="logo-text-table"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==submenuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+submenuItem.ActiveIcon  || '/images/'+submenuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751903" data-di-res-id="cea59413-3f672a93"><use xlink:href="/images/icon_sprite.svg#" data-ng-href="/images/icon_sprite.svg#"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Retraits en attente</span> <!-- ngIf: submenuItem.Subtitle --> </td> <td ng-show="submenuItem.Indicator != null" class=""> <div ng-show="$ctrl.userProfile[submenuItem.Indicator].length" class="circle-indicator ng-hide"> <span class="text">0</span> </div> </td> <td class="arrow-glyphicon"> <span class="arrow-right hidden-xs"></span> <span class="glyphicon visible-xs visible-sm visible-md visible-md pull-right glyphicon-menu-right" ng-class="{'glyphicon-menu-right':$ctrl.isLeftOrRight=='ltr','glyphicon-menu-left':$ctrl.isLeftOrRight=='rtl'}"></span> </td> </tr> </tbody></table> </a> </li><!-- end ngRepeat: submenuItem in menuItem.SubMenuItems --><li ng-repeat="submenuItem in menuItem.SubMenuItems" id="sideMenu10" class="main-aside-btn main-aside-li" ng-class="{'selected':$ctrl.activeItemId==submenuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled': (($ctrl.sideMenuDisable) || (submenuItem.Indicator != null &amp;&amp; $ctrl.userProfile[submenuItem.Indicator].length == 0))}" ng-click="$ctrl.checkSubMenu($index,$parent.$index)"> <a data-target=".navbar-collapse" id="menuItem10" data-toggle="collapse" href="https://myvip.avatrade.fr/withdrawl_funds" href-target="" urltarget="submenuItem.Target" class="menu-item-link" data-di-id="#menuItem10"> <table class="logo-text-table"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==submenuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+submenuItem.ActiveIcon  || '/images/'+submenuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751905" data-di-res-id="afcf59d4-a8ca9f8b"><use xlink:href="/images/icon_sprite.svg#" data-ng-href="/images/icon_sprite.svg#"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Retirez vos fonds</span> <!-- ngIf: submenuItem.Subtitle --> </td> <td ng-show="submenuItem.Indicator != null" class="ng-hide"> <div ng-show="$ctrl.userProfile[submenuItem.Indicator].length" class="circle-indicator ng-hide"> <span class="text"></span> </div> </td> <td class="arrow-glyphicon"> <span class="arrow-right hidden-xs"></span> <span class="glyphicon visible-xs visible-sm visible-md visible-md pull-right glyphicon-menu-right" ng-class="{'glyphicon-menu-right':$ctrl.isLeftOrRight=='ltr','glyphicon-menu-left':$ctrl.isLeftOrRight=='rtl'}"></span> </td> </tr> </tbody></table> </a> </li><!-- end ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> </li><!-- end ngRepeat: menuItem in $ctrl.menuItems --><li ng-repeat="menuItem in $ctrl.menuItems" id="sideMenu7" class="main-aside-btn main-aside-li" ng-class="{'selected':$ctrl.activeItemId==menuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled':$ctrl.sideMenuDisable, 'menuTop':(menuItem.previousMenuActive &amp;&amp; !$ctrl.mobileConfig.isMobile)}"> <a data-target=".navbar-collapse" id="menuItem7" data-toggle="collapse" href="https://www.avatrade.fr/trading-info/trading-calculator" href-target="" urltarget="menuItem.Target" class="menu-item-link" target="_blank" data-di-id="#menuItem7"> <table class="logo-text-table ng-hide" ng-show="$ctrl.mobileConfig.isMobile || $ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751907" data-di-res-id="f0a55d5-9da655d7"><use xlink:href="/images/icon_sprite.svg#tradingcalc" data-ng-href="/images/icon_sprite.svg#tradingcalc"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Calculatrice de trade</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751907" data-di-res-id="5c6915f-f324830a"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt; 0" class="ng-hide"> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> </tr> </tbody></table> <table class="logo-text-table" ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751908" data-di-res-id="c2f07bf2-6a71798a"><use xlink:href="/images/icon_sprite.svg#tradingcalc" data-ng-href="/images/icon_sprite.svg#tradingcalc"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Calculatrice de trade</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751908" data-di-res-id="5da58109-3b22f752"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet &amp;&amp; menuItem.SubMenuItems.length &gt; 0 " class="ng-hide"> <!--<img ng-src="{{menuItem.subMenuActive? '/images/arrow-down.png' : '/images/arrow-up.png'}}" class="arrow-submenu" />--> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-up': menuItem.subMenuActive, 'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> <td ng-show="menuItem.Indicator != null" class="ng-hide"> <div ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt;0" class="circle-indicator ng-hide"> <span class="text"></span> </div> </td> <!-- ngIf: menuItem.SubMenuItems.length > 0 --> </tr> </tbody></table> </a> <ul class="main-aside-ul child ng-hide" ng-show="false"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> <ul class="main-aside-ul child ng-hide" ng-show="menuItem.subMenuActive &amp;&amp; !($ctrl.mobileConfig.isMobile)"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> </li><!-- end ngRepeat: menuItem in $ctrl.menuItems --><li ng-repeat="menuItem in $ctrl.menuItems" id="sideMenu14" class="main-aside-btn main-aside-li" ng-class="{'selected':$ctrl.activeItemId==menuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled':$ctrl.sideMenuDisable, 'menuTop':(menuItem.previousMenuActive &amp;&amp; !$ctrl.mobileConfig.isMobile)}"> <a data-target=".navbar-collapse" id="menuItem14" data-toggle="collapse" href="https://myvip.avatrade.fr/account_info" href-target="" urltarget="menuItem.Target" class="menu-item-link" data-di-id="#menuItem14"> <table class="logo-text-table ng-hide" ng-show="$ctrl.mobileConfig.isMobile || $ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751911" data-di-res-id="1dcde733-54a960d2"><use xlink:href="/images/icon_sprite.svg#history" data-ng-href="/images/icon_sprite.svg#history"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Mes infos</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751913" data-di-res-id="b7c42fb8-ded2272f"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt; 0" class="ng-hide"> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> </tr> </tbody></table> <table class="logo-text-table" ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751915" data-di-res-id="92af7064-2ffb943a"><use xlink:href="/images/icon_sprite.svg#history" data-ng-href="/images/icon_sprite.svg#history"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Mes infos</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751917" data-di-res-id="38a6b8ef-a36b7968"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet &amp;&amp; menuItem.SubMenuItems.length &gt; 0 " class="ng-hide"> <!--<img ng-src="{{menuItem.subMenuActive? '/images/arrow-down.png' : '/images/arrow-up.png'}}" class="arrow-submenu" />--> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-up': menuItem.subMenuActive, 'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> <td ng-show="menuItem.Indicator != null" class="ng-hide"> <div ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt;0" class="circle-indicator ng-hide"> <span class="text"></span> </div> </td> <!-- ngIf: menuItem.SubMenuItems.length > 0 --> </tr> </tbody></table> </a> <ul class="main-aside-ul child ng-hide" ng-show="false"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> <ul class="main-aside-ul child ng-hide" ng-show="menuItem.subMenuActive &amp;&amp; !($ctrl.mobileConfig.isMobile)"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> </li><!-- end ngRepeat: menuItem in $ctrl.menuItems --><li ng-repeat="menuItem in $ctrl.menuItems" id="sideMenu15" class="main-aside-btn main-aside-li" ng-class="{'selected':$ctrl.activeItemId==menuItem.Id &amp;&amp; !$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet,'disabled':$ctrl.sideMenuDisable, 'menuTop':(menuItem.previousMenuActive &amp;&amp; !$ctrl.mobileConfig.isMobile)}"> <a data-target=".navbar-collapse" id="menuItem15" data-toggle="collapse" href="https://myvip.avatrade.fr/refer_friend" href-target="" urltarget="menuItem.Target" class="menu-item-link" data-di-id="#menuItem15"> <table class="logo-text-table ng-hide" ng-show="$ctrl.mobileConfig.isMobile || $ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751919" data-di-res-id="7b663811-bdb39e7"><use xlink:href="/images/icon_sprite.svg#Rfriend" data-ng-href="/images/icon_sprite.svg#Rfriend"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Référez un ami</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751921" data-di-res-id="5a6d9de3-8e987d88"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt; 0" class="ng-hide"> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> </tr> </tbody></table> <table class="logo-text-table" ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet" ng-click="$ctrl.checkSubMenu($index, null)"> <tbody><tr> <td class="logo"> <!--<img data-ng-src="{{$ctrl.activeItemId==menuItem.Id && !$ctrl.mobileConfig.isMobile  && !$ctrl.mobileConfig.isTablet && '/images/'+menuItem.ActiveIcon  || '/images/'+menuItem.InactiveIcon }}" class="contetn" />--> <svg class="icon-svg" width="2em" height="100%" data-di-rand="1591386751922" data-di-res-id="48d8320d-36a1d58a"><use xlink:href="/images/icon_sprite.svg#Rfriend" data-ng-href="/images/icon_sprite.svg#Rfriend"></use></svg> </td> <td class="text"> <span class="contetn menu-item-span">Référez un ami</span> <!-- ngIf: menuItem.Subtitle --> </td> <td class="isNewItem ng-hide" ng-show="menuItem.IsNew"> <svg class="new-item icon-svg" width="100%" height="100%" data-di-rand="1591386751922" data-di-res-id="8a227bae-10f517b1"><use xlink:href="/images/icon_sprite.svg#new_icon"></use></svg> </td> <td ng-show="!$ctrl.mobileConfig.isMobile &amp;&amp; !$ctrl.mobileConfig.isTablet &amp;&amp; menuItem.SubMenuItems.length &gt; 0 " class="ng-hide"> <!--<img ng-src="{{menuItem.subMenuActive? '/images/arrow-down.png' : '/images/arrow-up.png'}}" class="arrow-submenu" />--> <span class="glyphicon arrow-menu glyphicon-menu-down" ng-class="{'glyphicon-menu-up': menuItem.subMenuActive, 'glyphicon-menu-down': !menuItem.subMenuActive}"></span> </td> <td ng-show="menuItem.Indicator != null" class="ng-hide"> <div ng-show="$ctrl.userProfile[menuItem.Indicator].length &gt;0" class="circle-indicator ng-hide"> <span class="text"></span> </div> </td> <!-- ngIf: menuItem.SubMenuItems.length > 0 --> </tr> </tbody></table> </a> <ul class="main-aside-ul child ng-hide" ng-show="false"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> <ul class="main-aside-ul child ng-hide" ng-show="menuItem.subMenuActive &amp;&amp; !($ctrl.mobileConfig.isMobile)"> <!-- ngRepeat: submenuItem in menuItem.SubMenuItems --> </ul> </li><!-- end ngRepeat: menuItem in $ctrl.menuItems --> <!-- ngIf: $ctrl.isAtrade && $ctrl.hasRealAccount && $ctrl.educationItem --> <li class="empty-li"></li> </ul> <div id="marginMenu" class="menuTop menuNoneblock"></div> <!-- ngIf: $ctrl.mobileConfig.isMobile || $ctrl.mobileConfig.isTablet --> <!-- ngIf: $ctrl.mobileConfig.isMobile || $ctrl.mobileConfig.isTablet --> </div> </aside> <div class="blur-off"></div></side-menu-cmp>
+                        <!--<div class="right-menu-container" ng-if="mobileConfig.isMobile">
+                    <side-menu-mobile-appendix-cmp></side-menu-mobile-appendix-cmp>
+                    <div ng-click="auth.logOut()">
+                        <side-menu-mobile-logout-cmp></side-menu-mobile-logout-cmp>
+                    </div>
+                </div>-->
+                    </div><!-- end ngIf: !hideElements.HideLeftSideMenu -->
+                    <div class="ng-scope middle-section col-xs-12 col-sm-12 col-lg-7" ng-class="{ 'col-lg-7': auth.isLoggedIn &amp;&amp; !auth.isWebTrader, 'col-lg-9': !auth.isLoggedIn , 'center-body':!mobileConfig.isMobile &amp;&amp; !mobileConfig.isTablet &amp;&amp; hideElements.RightSideMenu &amp;&amp; hideElements.LeftSideMenu ,'smallerButton':mobileConfig.isMobile, 'padding-0' : isDeposit || isDepositPraxis || activeRouteVueAva, 'deposit': isDeposit, 'praxis-width': isDepositPraxis &amp;&amp; mobileConfig.isMobile }">
+
+                        <!-- uiView:  --><div ng-show="!activeRouteVueAvaLoading &amp;&amp; !activeRouteVueAva &amp;&amp; !(vueRoutes.includes($state.current.name) &amp;&amp; tempAccountStatementUsers.includes(userProfile.Email))" ui-view="" class="iframe-view"><!--Mobile--><!--Mobile--> <!-- ngIf: myAccount.showTables --><div class="content animated fadeIn my-account hidden-xs force-print" ng-if="myAccount.showTables" data-di-form-track="" data-di-form-id="myAccount"> <!--DeskTop--> <div class="title-container hidden-xs force-print"> <div class="row"> <div class="text col-sm-9" data-di-unmask-field="">Mon compte</div> <!-- ngIf: myAccount.userProfile.ProfessionalTrader.Status == 1 --> </div> <hr> </div> <!-- ngIf: myAccount.isDemoAccountExpired --> <div class="row tables-container"> <div> <!--Real Account Table--> <!-- ngIf: myAccount.realAccountsList --><div ng-if="myAccount.realAccountsList" class="realTablePB"> <div class="row"> <div class="col-md-12 col-sm-12"> <div class="text navbar navbar-default title-container account-table-headr"> <div class="text">Compte réel</div> <add-account-btn class="add-class-btn-wt"><!-- ngIf: $ctrl.isLoggedIn && $ctrl.showAddAccountButtons --><div id="side-add-account" class="row side-add-account-btn-box" ng-if="$ctrl.isLoggedIn &amp;&amp; $ctrl.showAddAccountButtons" ng-class="{'collapse navbar-collapse':$ctrl.mobileConfig.isMobile || $ctrl.mobileConfig.isTablet}" ng-mouseleave="$ctrl.isCollapsed = !$ctrl.isCollapsed"> <!-- ngIf: !$ctrl.showUpgradeToRealBtn --><div class="addAccountBtn" ng-if="!$ctrl.showUpgradeToRealBtn"> <button id="addAccountBtn" class="btn green-btn side-add-account-btn-width add-acc-btn-padd" ng-class="{'disabled':$ctrl.isCollapsed}" ng-mouseenter="$ctrl.isCollapsed = !$ctrl.isCollapsed" data-di-id="#addAccountBtn"> + Ajouter un compte </button> </div><!-- end ngIf: !$ctrl.showUpgradeToRealBtn --> <!-- ngIf: $ctrl.showUpgradeToRealBtn --> <!-- ngIf: !$ctrl.showUpgradeToRealBtn --><div uib-collapse="!$ctrl.isCollapsed" class="collapse-width uib-collapse add-account-btn-container collapse" ng-if="!$ctrl.showUpgradeToRealBtn" style="height: 0px;"> <div class="pull-right X-btn ng-hide" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed" ng-show="$ctrl.mobileConfig.isMobile"> <span class="glyphicon glyphicon-remove" data-di-id="#gen_pull-RightX-BtnNg-Hide"></span> </div> <button id="addRealAccountBtn" class="btn green-btn side-add-account-btn-width real-btn-paddB" data-target=".navbar-collapse" data-toggle="collapse" ng-click="$ctrl.createAccountByRegType(1);$ctrl.isCollapsed = !$ctrl.isCollapsed" data-di-id="#addRealAccountBtn"> Compte réel </button> <!-- ngIf: $ctrl.showAddDemoAccountBtn && !$ctrl.isWebTrader --><button id="addDemoAccountBtn" class="btn demo-btn side-add-account-btn-width" ng-if="$ctrl.showAddDemoAccountBtn &amp;&amp; !$ctrl.isWebTrader" data-target=".navbar-collapse" data-toggle="collapse" ng-click="$ctrl.createAccountByRegType(2);$ctrl.isCollapsed = !$ctrl.isCollapsed" data-di-id="#addDemoAccountBtn"> Compte démo </button><!-- end ngIf: $ctrl.showAddDemoAccountBtn && !$ctrl.isWebTrader --> </div><!-- end ngIf: !$ctrl.showUpgradeToRealBtn --> </div><!-- end ngIf: $ctrl.isLoggedIn && $ctrl.showAddAccountButtons --></add-account-btn> </div> </div> </div> <div class="row"> <div class="col-md-12 col-sm-12"> <form data-di-form-track="" data-di-form-id="realAccounts" class="ng-pristine ng-valid"> <table ng-table="myAccount.realAccountTable" class="table ng-table"><!-- ngInclude: templates.header --><thead ng-include="templates.header"><!-- ngIf: params.hasGroup() --> <tr class="ng-table-sort-header"> <!-- ngRepeat: $column in $columns --> </tr> <tr ng-show="show_filter" class="ng-table-filters ng-hide"> <!-- ngRepeat: $column in $columns --> </tr> </thead> <tbody><tr> <th class="text-left sortable header observation-header"> <div class="ng-table-header text-dir" data-di-unmask-field="">Informations de compte</div> </th> <th class="text-left sortable header observation-header"> <div class="ng-table-header" data-di-unmask-field="">Autres plateformes de trading<!-- ngIf: myAccount.isAvaJapan --></div> </th> <th class="text-left sortable header observation-header"> <div class="ng-table-header"> Valeur nette <!--<img style="padding-left: 4px; cursor: pointer" src="/images/refresh.png" id="myAccountRefresh" ng-class="{spin: isBalanceLoading}" alt="" ng-click="myAccount.refreshEquity()" />--> </div> </th> <th class="text-left sortable header observation-header"> <div class="ng-table-header"> Capital en attente <!--<img style="padding-left: 4px; cursor: pointer" src="/images/refresh.png" id="myAccountRefresh" ng-class="{spin: isBalanceLoading}" alt="" ng-click="myAccount.refreshEquity()" />--> </div> </th> <th class="text-left sortable header observation-header"> <div class="ng-table-header"> <i class="fa fa-refresh cursor-pointer" id="myAccountRefresh" aria-hidden="true" ng-class="{'fa-spin': isBalanceLoading}" ng-click="myAccount.refreshEquity()" style=""></i> </div> <!--<div class="ng-table-header">{{'action' | translate}}</div>--> </th> </tr> <!-- ngRepeat: account in $data --><tr ng-repeat="account in $data" id="TPAccountID-75165542"> <td class="col-md-4 col-sm-4 centerText float-opt text-dir" data-di-unmask-field=""> Connexion: <span class="font-bold" data-di-unmask-field="" data-di-id="#gen_75165542">75165542</span> <br> <span id="PlatformServer" data-di-id="#PlatformServer">Serveur: <span class="font-bold" data-di-unmask-field="">Ava - Real 2</span></span> <br> <!--<span ng-if="!account.TradingPlatformName">{{account.Platform}}</span>
+                                        <span ng-if="account.TradingPlatformName">{{account.TradingPlatformName}}</span>--> <span data-di-unmask-field="" data-di-id="#gen_devise:USD">Devise: <span class="font-bold" data-di-unmask-field="">USD</span></span> <br> <!--<a ng-class="{'disabled':!account.AccountLinks.AccountStatementLink}" id="account_link_{{$index}}" href="{{account.AccountLinks.AccountStatementLink}}" target="_blank">{{'accountStatment' | translate}}</a>--> <a id="a6" ng-class="{'disabled':!account.AccountLinks.AccountStatementLink}" class="cursor-pointer" ng-click="myAccount.accountStatementRedirect(account.AccountLinks.AccountStatementLink,account.TPAccountID)" data-di-unmask-field="" data-di-id="#a6">Relevé de compte</a> </td> <td class="col-md-4 col-sm-4 centerText float-opt"> <table class="platform-download"> <tbody><tr> <td> <ul class="main-aside-ul"> <a id="download_link_0" class="cursor-pointer" ng-click="myAccount.platformClick(account.TradingPlatformName, $event, {href: account.AccountLinks.DownloadLink})" data-di-unmask-field="" data-di-id="#download_link_0"> <li> <img src="my_account_fichiers/download.png"> </li> <!-- ngIf: isWebTrader() --> <!-- ngIf: !isWebTrader() --><li class="download" ng-if="!isWebTrader()">Télécharger</li><!-- end ngIf: !isWebTrader() --> </a> </ul> </td> <td> <ul class="main-aside-ul"> <a id="online_link_0" class="cursor-pointer" ng-click="myAccount.platformClick(account.TradingPlatformName, $event, {href: account.AccountLinks.OnlinePlatformLink})" data-di-unmask-field="" data-di-id="#online_link_0"> <li> <img src="my_account_fichiers/web.png"> </li> <!-- ngIf: isWebTrader() --> <!-- ngIf: !isWebTrader() --><li class="download" ng-if="!isWebTrader()">Trading en ligne</li><!-- end ngIf: !isWebTrader() --> </a> </ul> </td> <td> <!-- ngIf: myAccount.showDupliTrade(account) --><ul class="main-aside-ul" ng-if="myAccount.showDupliTrade(account)"> <a id="online_link_0" ng-show="!account.isDuplitradeLoading" class="cursor-pointer" ng-click="myAccount.dupliTradeClick(account)" data-di-unmask-field="" data-di-id="#online_link_0"> <li> <!-- ngIf: account.TypeExt!='DupliTrade_Active' && account.TypeExt!='DupliTrade_In_Progress' --> <!-- ngIf: account.TypeExt!='DupliTrade_Active' && account.TypeExt!='DupliTrade_In_Progress' --> <!-- ngIf: account.TypeExt=='DupliTrade_Active' || account.TypeExt=='DupliTrade_In_Progress' --><img ng-if="account.TypeExt=='DupliTrade_Active' || account.TypeExt=='DupliTrade_In_Progress'" src="my_account_fichiers/DupliTrade_goTo.png"><!-- end ngIf: account.TypeExt=='DupliTrade_Active' || account.TypeExt=='DupliTrade_In_Progress' --> </li> <!-- ngIf: account.TypeExt!='DupliTrade_Active' && account.TypeExt!='DupliTrade_In_Progress' --> <!-- ngIf: account.TypeExt=='DupliTrade_Active' || account.TypeExt=='DupliTrade_In_Progress' --><li ng-if="account.TypeExt=='DupliTrade_Active' || account.TypeExt=='DupliTrade_In_Progress'" class="download">Aller à DupliTrade</li><!-- end ngIf: account.TypeExt=='DupliTrade_Active' || account.TypeExt=='DupliTrade_In_Progress' --> </a> <span ng-class="{'duplitrade-refresh-holder' : account.isDuplitradeLoading}" data-di-id="#gen_"> <img ng-show="account.isDuplitradeLoading" class="refresh-img duplitrade-refresh ng-hide pull-right" ng-class="{'pull-right':direction == 'ltr','pull-left': direction == 'rtl', 'fa-spin': account.isDuplitradeLoading}" src="my_account_fichiers/refresh.png" id="duplitrade_refresh_img" alt=""> </span> </ul><!-- end ngIf: myAccount.showDupliTrade(account) --> </td> </tr> </tbody></table> </td> <td class="col-md-2 centerText float-opt equity-data"> $41</td> <td class="col-md-4 centerText float-opt equity-data"> <input type="checkbox" name="checkbox_withdrawal" id="chb_" class="checBox-pad checkbox-custom" ng-click="pending_withdrawals.CheckboxSelect($event)" data-di-id="#chb_"> <!-- ngIf: account.AccountPendingDeposits > 0 --> <!-- ngIf: account.AccountPendingDeposits==0 --><span ng-if="account.AccountPendingDeposits==0" data-di-id="#gen_$">$0</span><!-- end ngIf: account.AccountPendingDeposits==0 --> </td> <td class="col-md-2 col-sm-2centerText float-opt paddingT-20 action-btn"> <button class="btn green-btn action-btn" id="deposit_button_0" ng-click="myAccount.deposit(account, $event)" data-di-id="#deposit_button_0" lang="fr">Dépôt</button> <a id="pending_withdrawl_link" ng-show="myAccount.userProfile.PendingWithdrawals.length" class="pending-withdrawals-link ng-hide" ng-click="myAccount.goToPendingWithdrawl()" data-di-id="#pending_withdrawl_link">Retraits en attente</a> </td> </tr><!-- end ngRepeat: account in $data --> </tbody></table><div ng-table-pagination="params" template-url="templates.pagination"><!-- ngInclude: templateUrl --><div ng-include="templateUrl"><!-- ngIf: params.data.length --><div class="ng-table-pager" ng-if="params.data.length"> <!-- ngIf: params.settings().counts.length --> <!-- ngIf: pages.length --> </div><!-- end ngIf: params.data.length --> </div></div> <!-- ngIf: myAccount.isEU_BG --> <!-- ngIf: myAccount.isEU_BG --> </form> </div> </div> </div><!-- end ngIf: myAccount.realAccountsList --> <!--Demo Account Table--> <!-- ngIf: myAccount.demoAccountsList --><div ng-if="myAccount.demoAccountsList"> <div class="row"> <div class="col-md-12 col-sm-12"> <div class="text navbar navbar-default title-container account-table-headr"> <div class="text">Compte démo</div> </div> </div> </div> <div class="row"> <div class="col-md-12 col-sm-12"> <form class="ng-pristine ng-valid"> <table ng-table="myAccount.demoAccountTable" class="table ng-table"><!-- ngInclude: templates.header --><thead ng-include="templates.header"><!-- ngIf: params.hasGroup() --> <tr class="ng-table-sort-header"> <!-- ngRepeat: $column in $columns --> </tr> <tr ng-show="show_filter" class="ng-table-filters ng-hide"> <!-- ngRepeat: $column in $columns --> </tr> </thead> <tbody><tr> <th class="text-left sortable header observation-header"> <div class="ng-table-header text-dir">Informations de compte</div> </th> <th class="text-left sortable header observation-header"> <div class="ng-table-header">Autres plateformes de trading</div> </th> <th class="text-left sortable header observation-header"> <div class="ng-table-header">Date d'expiration</div> </th> <!--<th class="text-left sortable header observation-header"></th>--> </tr> <!-- ngRepeat: account in $data --><tr ng-repeat="account in $data" id="TPAccountID-21518123"> <td class="col-md-3 col-sm-3 centerText float-opt text-dir paddingT-20"> Connexion: <span class="font-bold" data-di-id="#gen_21518123">21518123</span> <br> Serveur: <span class="font-bold" data-di-id="#gen_Ava-Demo"> <span>Ava - Demo</span> </span> <br> <span data-di-id="#gen_devise:USD">Devise: <span class="font-bold">USD</span></span> <br> <a ng-class="{'disabled':!account.AccountLinks.AccountStatementLink}" id="a1" href="" target="_blank" class="disabled" data-di-id="#a1">Relevé de compte</a> <!--<a id="a5" class="cursor-pointer" ng-click="myAccount.accountStatementRedirect(account.AccountLinks.AccountStatementLink)" >{{'accountStatment' | translate}}</a>--> </td> <td class="col-md-5 col-sm-5 centerText float-opt"> <table class="platform-download"> <tbody><tr> <td> <ul class="main-aside-ul"> <a id="A2" class="cursor-pointer" ng-click="myAccount.platformClick(account.TradingPlatformName, $event, {href: account.AccountLinks.DownloadLink})" data-di-id="#A2"> <li> <img src="my_account_fichiers/download.png"> </li> <!-- ngIf: isWebTrader() --> <!-- ngIf: !isWebTrader() --><li class="download" ng-if="!isWebTrader()">Télécharger</li><!-- end ngIf: !isWebTrader() --> </a> </ul> </td> <td> <ul class="main-aside-ul"> <a id="A3" class="cursor-pointer" ng-click="myAccount.platformClick(account.TradingPlatformName, $event, {href: account.AccountLinks.OnlinePlatformLink})" data-di-id="#A3"> <li> <img src="my_account_fichiers/web.png"> </li> <!-- ngIf: isWebTrader() --> <!-- ngIf: !isWebTrader() --><li class="download" ng-if="!isWebTrader()">Trading en ligne</li><!-- end ngIf: !isWebTrader() --> </a> </ul> </td> <td> <!-- ngIf: myAccount.showDupliTrade(account) --><ul class="main-aside-ul" ng-if="myAccount.showDupliTrade(account)"> <a id="online_link_0" class="cursor-pointer" ng-show="!account.isDuplitradeLoading" ng-click="myAccount.dupliTradeClick(account)" data-di-unmask-field="" data-di-id="#online_link_0"> <li> <!-- ngIf: account.TypeExt!='DupliTrade_Active' && account.TypeExt!='DupliTrade_In_Progress' --><img ng-if="account.TypeExt!='DupliTrade_Active' &amp;&amp; account.TypeExt!='DupliTrade_In_Progress'" src="my_account_fichiers/dupliTrade_connectTo.png"><!-- end ngIf: account.TypeExt!='DupliTrade_Active' && account.TypeExt!='DupliTrade_In_Progress' --> <!-- ngIf: account.TypeExt!='DupliTrade_Active' && account.TypeExt!='DupliTrade_In_Progress' --><img ng-if="account.TypeExt!='DupliTrade_Active' &amp;&amp; account.TypeExt!='DupliTrade_In_Progress'" src="my_account_fichiers/q_mark.png" title="DupliTrade est une plateforme de trading automatisé compatible avec MT4. Connectez-vous à la plateforme DupliTrade pour suivre et copier les activités de traders aguerris en temps réel."><!-- end ngIf: account.TypeExt!='DupliTrade_Active' && account.TypeExt!='DupliTrade_In_Progress' --> <!-- ngIf: account.TypeExt=='DupliTrade_Active' || account.TypeExt=='DupliTrade_In_Progress' --> </li> <!-- ngIf: account.TypeExt!='DupliTrade_Active' && account.TypeExt!='DupliTrade_In_Progress' --><li ng-if="account.TypeExt!='DupliTrade_Active' &amp;&amp; account.TypeExt!='DupliTrade_In_Progress'" class="download">Se connecter à DupliTrade</li><!-- end ngIf: account.TypeExt!='DupliTrade_Active' && account.TypeExt!='DupliTrade_In_Progress' --> <!-- ngIf: account.TypeExt=='DupliTrade_Active' || account.TypeExt=='DupliTrade_In_Progress' --> </a> <span ng-class="{'duplitrade-refresh-holder' : account.isDuplitradeLoading}" data-di-id="#gen_"> <img ng-show="account.isDuplitradeLoading" class="refresh-img duplitrade-refresh ng-hide pull-right" ng-class="{'pull-right':direction == 'ltr','pull-left': direction == 'rtl', 'fa-spin': account.isDuplitradeLoading}" src="my_account_fichiers/refresh.png" id="duplitrade_refresh_img" alt=""> </span> </ul><!-- end ngIf: myAccount.showDupliTrade(account) --> </td> </tr> </tbody></table> </td> <td class="col-md-3 col-sm-3 centerText float-opt paddingT-20">12/06/2020</td> <td class="col-md-1 col-sm-3 centerText float-opt paddingT-20"> <!-- ngIf: account.Challenge --> </td> </tr><!-- end ngRepeat: account in $data --> </tbody></table><div ng-table-pagination="params" template-url="templates.pagination"><!-- ngInclude: templateUrl --><div ng-include="templateUrl"><!-- ngIf: params.data.length --><div class="ng-table-pager" ng-if="params.data.length"> <!-- ngIf: params.settings().counts.length --> <!-- ngIf: pages.length --> </div><!-- end ngIf: params.data.length --> </div></div> </form> </div> </div> <!-- ngIf: !myAccount.hasReal --> </div><!-- end ngIf: myAccount.demoAccountsList --> </div> </div> </div><banner-cmp ng-if="!hideElements.HideBanner &amp;&amp; !mobileConfig.isMobile &amp;&amp; $state.current.name === 'my_account'" carusel-id="myava_banners" class="myava_banners_margin_top"><div> <!-- ngIf: banners && banners.length > 0 --> </div></banner-cmp><!-- end ngIf: !hideElements.HideBanner && !mobileConfig.isMobile && $state.current.name === 'my_account' -->
+                    </div>
+                    <!-- ngIf: !(mobileConfig.isMobile || mobileConfig.isTablet) --><div ng-show="registerTypOn" ng-if="!(mobileConfig.isMobile || mobileConfig.isTablet)" class="col-md-3 right-section hidden-print hidden-xs hidden-sm hidden-md">
+                        <add-account-btn ng-show="!hideElements.HideAddAccountBtn" class=""><!-- ngIf: $ctrl.isLoggedIn && $ctrl.showAddAccountButtons --><div id="side-add-account" class="row side-add-account-btn-box" ng-if="$ctrl.isLoggedIn &amp;&amp; $ctrl.showAddAccountButtons" ng-class="{'collapse navbar-collapse':$ctrl.mobileConfig.isMobile || $ctrl.mobileConfig.isTablet}" ng-mouseleave="$ctrl.isCollapsed = !$ctrl.isCollapsed"> <!-- ngIf: !$ctrl.showUpgradeToRealBtn --><div class="addAccountBtn" ng-if="!$ctrl.showUpgradeToRealBtn"> <button id="addAccountBtn" class="btn green-btn side-add-account-btn-width add-acc-btn-padd" ng-class="{'disabled':$ctrl.isCollapsed}" ng-mouseenter="$ctrl.isCollapsed = !$ctrl.isCollapsed" data-di-id="#addAccountBtn" style=""> + Ajouter un compte </button> </div><!-- end ngIf: !$ctrl.showUpgradeToRealBtn --> <!-- ngIf: $ctrl.showUpgradeToRealBtn --> <!-- ngIf: !$ctrl.showUpgradeToRealBtn --><div uib-collapse="!$ctrl.isCollapsed" class="collapse-width uib-collapse add-account-btn-container collapse" ng-if="!$ctrl.showUpgradeToRealBtn" style="height: 0px;" aria-expanded="false" aria-hidden="true"> <div class="pull-right X-btn ng-hide" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed" ng-show="$ctrl.mobileConfig.isMobile"> <span class="glyphicon glyphicon-remove" data-di-id="#gen_pull-RightX-BtnNg-Hide"></span> </div> <button id="addRealAccountBtn" class="btn green-btn side-add-account-btn-width real-btn-paddB" data-target=".navbar-collapse" data-toggle="collapse" ng-click="$ctrl.createAccountByRegType(1);$ctrl.isCollapsed = !$ctrl.isCollapsed" data-di-id="#addRealAccountBtn"> Compte réel </button> <!-- ngIf: $ctrl.showAddDemoAccountBtn && !$ctrl.isWebTrader --><button id="addDemoAccountBtn" class="btn demo-btn side-add-account-btn-width" ng-if="$ctrl.showAddDemoAccountBtn &amp;&amp; !$ctrl.isWebTrader" data-target=".navbar-collapse" data-toggle="collapse" ng-click="$ctrl.createAccountByRegType(2);$ctrl.isCollapsed = !$ctrl.isCollapsed" data-di-id="#addDemoAccountBtn"> Compte démo </button><!-- end ngIf: $ctrl.showAddDemoAccountBtn && !$ctrl.isWebTrader --> </div><!-- end ngIf: !$ctrl.showUpgradeToRealBtn --> </div><!-- end ngIf: $ctrl.isLoggedIn && $ctrl.showAddAccountButtons --></add-account-btn>
+                        <div ng-controller="SideBoxCtrl" class="sideBoxCnt" ng-show="!hideElements.HideRightSideMenu" ng-class="{'hidden': isMaintenancePage}">
+                            <div class="sideBoxWrap fixedBox" scroll-and-fix="fixedBox">
+                                <!-- ngIf: pt && show_pro -->
+                                <!-- ngIf: sideBox1 -->
+                                <!-- ngInclude:  --><div data-ng-include="" src="help" class="sideBoxCnt fixed"><section class="main-right-section need-help-mobile"> <!-- ngIf: IsChinaDomain --> <!-- ngIf: !IsChinaDomain --><div class="needHelp" ng-if="!IsChinaDomain" ng-bind="'needHelp' | translate">Avez-vous besoin d’aide&nbsp;?</div><!-- end ngIf: !IsChinaDomain --> <div class="callUs" ng-bind="'callUs' | translate">Appelez-nous:</div> <div class="supportNumber" ng-bind="supportNumber" id="supportNumber">+1 212-941-9609</div> <div class="chatImage"> <img src="my_account_fichiers/HelpChat2.png" alt=""> </div> <!-- ngIf: !isWhiteLabel && !IsChinaDomain  && ShowLiveChat --><div class="helpTextSupport" ng-if="!isWhiteLabel &amp;&amp; !IsChinaDomain  &amp;&amp; ShowLiveChat"> <div class="helpTextSupport" ng-bind="'startLiveChat' | translate">Commencer à Chater avec un agent de soutien</div> </div><!-- end ngIf: !isWhiteLabel && !IsChinaDomain  && ShowLiveChat --> <!-- ngIf: IsChinaDomain --> <!-- ngIf: !isWhiteLabel --><div class="chatBtnContainer" ng-if="!isWhiteLabel"> <button ng-show="ShowLiveChat" id="help_btn" class="btn chatBtn" ng-click="openChatWindow()" data-di-id="#help_btn"><span class="chatBtntxt"> Chat en direct </span></button> </div><!-- end ngIf: !isWhiteLabel --> </section></div>
+                                <sharp-trader class="display--block sideBoxCnt fixed hidden-xs"><!-- ngIf: $ctrl.IsShowSharpTrader --><section ng-if="$ctrl.IsShowSharpTrader" class="main-right-section hidden-xs"> <div class="sharp-trader-wrapper safety"> <div class="left"> <img src="my_account_fichiers/Account_logo1.png" alt="" style="transform:translate3d(-5px,-5px,0);width:40px"> </div> <div class="right"> <div class="" id="bottomText_sahrpTrader"> <div class="safety-header">Restez à jour!</div> <span data-di-id="#gen_consultezLesInfosQuotidiennesEtAnalysesSur">Consultez les infos quotidiennes  et analyses sur </span> <a ng-href="http://www.sharptrader.com/fr/" target="_blank" class="blueText" id="openPopup" href="http://www.sharptrader.com/fr/" data-di-id="#openPopup">Sharp Trader </a> </div> </div> <div style="clear: both"></div> </div> </section><!-- end ngIf: $ctrl.IsShowSharpTrader --></sharp-trader>
+                                <!-- ngIf: auth.isLoggedIn --><!-- ngInclude:  --><div ng-if="auth.isLoggedIn" data-ng-include="" src="bonus" class="sideBoxCnt fixed"><!-- ngIf: showDepositBonusSideBox --> <!-- ngIf: showDepositBonusSideBox --></div><!-- end ngIf: auth.isLoggedIn -->
+                                <!-- ngInclude:  --><div ng-show="!IsATrade &amp;&amp; !IsFriedbergDirectAVA" data-ng-include="" src="safety" class="sideBoxCnt fixed"><div class="visible-xs"> <span class="safety-header side-menu-item" ng-click="openSafetyPopup()" data-di-id="#gen_séCuritéDeVosFonds">Sécurité de vos fonds </span> </div> <section class="main-right-section hidden-xs"> <div class="safety"> <div class="left"> <!--<img src="/images/saftey_sideBar.png" style="margin-left: 15%" alt="" />--> <svg class="icon-svg" width="100%" data-di-rand="1591386751947" data-di-res-id="f046379f-d9904e81"><use xlink:href="/images/icon_sprite.svg#safety-funds"></use></svg> </div> <div class="right"> <div class="safety-header">Sécurité de vos fonds </div> <span data-di-id="#gen_avaTradeUtiliseDesOutilsEtDesSystèMesHautDeGammeAfinDeGarantirLaSéCuritéDesFondsEtDeL'IdentitéDeSesClients.">AvaTrade
+ utilise des outils et des systèmes haut de gamme afin de garantir la 
+sécurité des fonds et de l'identité de ses clients. </span> <div> <a href="#" class="blueText" id="openPopup" ng-click="openSafetyPopup()" data-di-id="#openPopup">En savoir davantage </a> </div> </div> <div style="clear: both"></div> <div class="hline"></div> <div class="left"> <!--<img src="/images/ssl_sideBar.png" alt="" />--> <svg class="icon-svg" width="100%" data-di-rand="1591386751948" data-di-res-id="a82527c9-88207f08"><use xlink:href="/images/icon_sprite.svg#ssl"></use></svg> </div> <div class="right"> <span data-di-id="#gen_ceSiteWebUtiliseLeChiffrementSSL256-BitPourUneExpéRienceEnLigneSéCuriséE.">Ce site web utilise le chiffrement SSL 256-bit pour une expérience en ligne sécurisée. </span> </div> <div style="clear: both"></div> </div> </section></div>
+                            </div>
+                        </div>
+                    </div><!-- end ngIf: !(mobileConfig.isMobile || mobileConfig.isTablet) -->
+                </div>
+                <!-- ngIf: isMobileAny -->
+                <!-- ngIf: !IsAvaJapan && !hideElements.HideFooter && !isDepositPraxis && !isLossLimitPopup --><div ng-controller="FooterCtrl as footer" ng-if="!IsAvaJapan &amp;&amp; !hideElements.HideFooter &amp;&amp; !isDepositPraxis &amp;&amp; !isLossLimitPopup" ng-class="{'hidden': isMaintenancePage}">
+                    <!-- ngIf: registerTypOn --><div class="row footer-wrapper" ng-if="registerTypOn">
+                        <div class="col-md-12 col-xs-12 fadeIn animated footer-border">
+                            <div class="row footer-cnt" ng-class="{'footer-cnt' : !mobileConfig.isMobile}">
+                                <div class="col-md-12 col-xs-12">
+                                    <table class="footer-table">
+                                        <tbody><tr>
+                                            <td class="ng-binding footer-disclaimer-cnt">
+                                                <!-- ngIf: !IsFriedbergDirectAVA --><div class="Separation_Section enSeparation_Section hidden-xs" ng-if="!IsFriedbergDirectAVA"></div><!-- end ngIf: !IsFriedbergDirectAVA -->
+                                                <div class="footer-text" ng-bind-html="footer.disclaimer" compile-template=""></div>
+                                                <!-- ngIf: footer.cnAppendix -->
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- end ngIf: registerTypOn -->
+                </div><!-- end ngIf: !IsAvaJapan && !hideElements.HideFooter && !isDepositPraxis && !isLossLimitPopup -->
+            </div>
+            <!-- ngIf: showMissingQuestionsPopup -->
+        </div>
+        <!-- ngIf: mobileConfig.isMobile || mobileConfig.isTablet -->
+        <challenge-widget-cmp></challenge-widget-cmp>
+    </div>
+    <!--<script src="//cdn.polyfill.io/v2/polyfill.js?features=default,fetch,modernizr:es5array,es6|gated&ua=ie/11" defer async></script>-->
+    <script src="my_account_fichiers/polyfill.js" defer="defer" async=""></script>
+    <!--<script src="//cdn.polyfill.io/v2/polyfill.js?features=es6|gated" defer async></script>-->
+    <script>/* IE svg fallback */if (/MSIE|Trident|Edge/gi.test(navigator.userAgent)) { var script = document.createElement("script"); script.type = "text/javascript", script.src = "/Widgets/plugin/svg4everybody.js"; var _callback = function () { svg4everybody({ polyfill: !0 }) }; script.readyState ? script.onreadystatechange = function () { /^(loaded|complete)$/.test(script.readyState) && (script.onreadystatechange = null, _callback(script)) } : script.onload = function (t) { _callback(script) }, document.head.appendChild(script) }</script>
+
+    <script src="my_account_fichiers/scripts.js"></script>
+    <!-- start template tags -->
+    <script src="my_account_fichiers/templateCache.js"></script><iframe src="my_account_fichiers/iframe_track.htm" style="display: none;" width="0" height="0"></iframe>
+    <!-- end template tags -->
+    <!--challenge-->
+    <script async="" src="my_account_fichiers/challengeWidget.js"></script>
+    <!--challenge-->
+    <script async="" src="my_account_fichiers/oapit.js"></script>
+    <!-- webeyez -->
+    <!-- ngIf: $root.IsWebeyezEnabled -->
+    <!-- webeyez -->
+
+    <script>
+        window.sbidTracking = window.sbidTracking || { q: [], track: function (data) { this.q.push(data) }, getSession: function () { return '-1' } };
+        var userProfile = sessionStorage.getItem("ngStorage-userProfile");
+        var customerId = userProfile != undefined && userProfile != null ? userProfile.customerID : null;
+        var aclid = sessionStorage.getItem("ngStorage-aclid");
+        if (customerId != null) {
+            if (aclid != null && aclid != undefined)
+                sbidTracking.track({ e: 'pv', cu_id: customerId, clid: aclid });
+            else
+                sbidTracking.track({ e: 'pv', cu_id: customerId });
+        }
+        else if (aclid != null && aclid != undefined) {
+            sbidTracking.track({ e: 'pv', clid: aclid });
+        }
+        else {
+            sbidTracking.track({ e: 'pv' });
+        }
+    </script>
+
+
+
+<div id="challengeWidget"></div><script src="my_account_fichiers/chat-zendesk.js" async=""></script><script type="text/javascript" id="">(function(){try{gtm_formHistory=[],window.addEventListener("beforeunload",function(){gtm_formHistory.length&&window.dataLayer.push({event:"BeforeUnload",ts:google_tag_manager["GTM-KLRBJ5"].macro(2),form:{inputPath:gtm_formHistory.join(" \x3e ")},tagId:90})}),jQuery(document).on("change","#avasFormWidget input, form[name^\x3dstep] input, form[name^\x3dstep] select",function(a){a=jQuery(this);var b="not set";google_tag_manager["GTM-KLRBJ5"].macro(3).match(/step[0-9]/)?b=a.attr("name"):a.attr("id")?b=a.attr("id"):a.attr("name")?b=a.attr("name"):
+"tel"===a.attr("type")&&(b="phoneNumber");gtm_formHistory.push(b+"");window.dataLayer.push({event:"inputChange","gtm.element":a,eventTimestamp:google_tag_manager["GTM-KLRBJ5"].macro(4),form:{inputName:b+"",inputPath:gtm_formHistory.join(" \x3e ")},tagId:90})})}catch(a){console.log(a)}})();</script><script type="text/javascript" id="">(function(){try{if(window.jQuery)jQuery(document).on("mousedown","a",function(a){2===a.which&&dataLayer.push({event:"wheel.click","gtm.element":this,"Click Text":this.text,"Click Classes":this.className,"Click ID":this.id,"Click URL":this.href})})}catch(a){console.log(a)}})();</script>  <script type="text/javascript" id="">(function(f,h){function l(a){a(window,"beforeunload")}function n(a){var b=a&&a["gtm.element"];b&&b.nodeType&&(a.dataContext=p(b),m=!0);return a}function q(a){var b=f(a),d=jQuery.extend({},b.data());v.map(function(a){var e=d,k=b;k=("string"==typeof k?f.trim(k):f.trim(k.attr(a))).replace(/\s+/g," ");e[a]=k?k:h});return d}function w(a,b){var d=[];f(a).parents().each(function(a,e){d.push(b.call(e,e,a))});return d}function x(a){var b,d=!1;for(b in a)y.call(a,b)&&(""===a[b]?a[b]="(not set)":d&&a[b]===h&&
+(a[b]="(undefined)"));return a}function p(a){var b=q(a);a=w(a,q);r&&console.info("Merging data sets",b,a);a.map(function(a){b=jQuery.extend(a,b)});return x(b)}function t(){var a="event_profiling\x3dtrue";a=-1==document.cookie.indexOf(a);return z||!a}function A(a){function b(a){setInterval(function(){m&&(a.push({dataContext:h}),m=!1)},1E3)}console.info("Loading data context plugin.");a.fn.dataContext=function(){return a.makeArray(this).map(p)};a(document).ready(function(){l(function(b,g,e){a(b).on(g,
+e,function(a){l.dataLayer.push({event:"context."+a.type,"gtm.element":a.target})})})});(function(a,g){function e(){var a=c.track;if(a&&c.end){var b=(c.end-c.start)/1E3;console.info("Processed %d variables in %f seconds",a,b)}c.id++;c.track=0;c.start=(new Date).getTime();c.end=0}var d=a.push,f=Array.prototype.slice,h=g&&g.e,c={id:0,track:0,start:0,end:0};l.dataLayer=a;b(a);setInterval(function(){t()&&e()},1E3);h&&(g.e=function(a){c.track++;c.end=(new Date).getTime();return h(a)});a.push=function(){if(t())return b=
+f.call(arguments,0).map(function(b){if(b.event){e();var c="dl/"+b.event,f=b.eventCallback;console.time(c);console.profile(c);b.eventCallback=function(){f&&f.apply(this,arguments);console.profileEnd();console.timeEnd(c);e()}}return d.call(a,n(b))}),b[b.length-1];var b=f.call(arguments,0).map(n);r&&b.map(function(a){console.log("dl:",a)});return d.apply(a,b)}})(window[u]=window[u]||[],window.google_tag_manager)}var r=!1,u="dataLayer",v="alt;title;aria expanded;id;value;rel".split(";"),m=!1,z=!1,y=Object.prototype.hasOwnProperty;
+(function(a,b,d){var g=b/d,e=setInterval(function(){window[a]?(A(f=window[a]),clearInterval(e)):1>g&&clearInterval(e);g--},d)})("jQuery",1E4,50)})(null);</script><script type="text/javascript" id="">window.dataLayer.push({originalLocation:document.location.protocol+"//"+document.location.hostname+document.location.pathname+document.location.search,hitCallback:"pageview"});</script><script type="text/javascript" id="">(function(){var a=500;window.setTimeout(function(){window.dataLayer.push({event:"virtual pageView timeout",tagId:284})},a)})();</script><div style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.030687898311783757"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.5848206768240247" alt="" src="my_account_fichiers/0.txt" width="0" height="0"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.5231287450683562" alt="" src="my_account_fichiers/0_002.txt" width="0" height="0"><img style="width:0px; height:0px; display:none; visibility:hidden;" id="batBeacon0.4189459741421294" alt="" src="my_account_fichiers/0_003.txt" width="0" height="0"></div><script type="text/javascript" id="">window.uetq=window.uetq||[];window.uetq.push("event","page_view",{page_path:"\/my_account"});</script><script type="text/javascript" id="">window.uetq=window.uetq||[];window.uetq.push("event","page_view",{page_path:"\/my_account"});</script><script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","136436216770158");fbq("track","PageView");</script>
+<div style="display: none; visibility: hidden;"><script>var img_t_t=google_tag_manager["GTM-KLRBJ5"].macro(17);
+null!=img_t_t&&function(){var b={"@context":"http://schema.org","@type":"Article",MainEntityOfpage:{"@type":"WebPage","@id":google_tag_manager["GTM-KLRBJ5"].macro(18)},headline:google_tag_manager["GTM-KLRBJ5"].macro(19),image:{"@type":"ImageObject",URL:google_tag_manager["GTM-KLRBJ5"].macro(20),height:300,width:300},dateModified:"2019-11-28",datePublished:"2019-11-28",author:{"@type":"Person",name:google_tag_manager["GTM-KLRBJ5"].macro(22)},publisher:{"@type":"Organization",name:"Avatrade",logo:{"@type":"imageObject",url:"https://"+google_tag_manager["GTM-KLRBJ5"].macro(23)+"/wp-content/uploads/2017/06/logo.png"}},
+description:google_tag_manager["GTM-KLRBJ5"].macro(24)},a=document.createElement("script");a.type="application/ld+json";a.innerHTML=JSON.stringify(b);document.getElementsByTagName("head")[0].appendChild(a)}(document);</script></div><iframe data-product="web_widget" title="No content" tabindex="-1" aria-hidden="true" style="width: 0px; height: 0px; border: 0px none; position: absolute; top: -9999px;" src="my_account_fichiers/a_002.htm"></iframe>
+      <div id="pushwoosh-subscription-segments-popup-root" class="pushwoosh-subscription-segments-popup pushwoosh-subscription-segments-popup_position_top">
+        <div id="pushwoosh-subscription-segments-popup-wrapper" class="pushwoosh-subscription-segments-popup__wrapper">
+          <div id="pushwoosh-subscription-segments-popup-inner" class="pushwoosh-subscription-segments-popup__inner">
+            <div id="pushwoosh-subscription-segments-popup-body" class="pushwoosh-subscription-segments-popup__body">
+            </div>
+          </div>
+          <button id="pushwoosh-subscription-segments-popup-close" class="pushwoosh-subscription-segments-popup__close" type="button" data-di-id="#pushwoosh-subscription-segments-popup-close">
+          </button>
+        </div>
+      </div>
+    <div><iframe title="Ouvre un widget dans lequel vous pouvez chatter avec l’un de nos agents" style="border: medium none; background: transparent none repeat scroll 0% 0%; z-index: 999998; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 1; height: 50px; max-height: 551px; min-height: 50px; margin: 10px 20px; right: 0px; bottom: 0px; width: 111px;width: 111px;width: 111px;width: 111px;width: 111px;width: 111px;width: 111px;width: 111px;width: 111px;width: 111px;width: 111px;width: 111px;width: 111px;width: 111px;width: 111px;width: 111px;width: 111px;width: 111px;width: 111px;" id="launcher" tabindex="0" class="zEWidget-launcher zEWidget-launcher--active"></iframe></div><div><iframe title="Trouvez des informations supplémentaires&nbsp;ici" style="border: medium none; background: transparent none repeat scroll 0% 0%; z-index: 999999; transform: translateZ(0px); position: fixed; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1); transition-property: opacity, top, bottom; opacity: 0; width: 357px; height: 100%; max-height: 565px; min-height: 150px; margin-left: 8px; margin-right: 8px; top: -9999px; visibility: hidden;" id="webWidget" tabindex="-1" class="zEWidget-webWidget "></iframe></div><div id="pushwoosh-in-app-modal-wrapper" class="pushwoosh-in-app-modal-wrapper"><div id="pushwoosh-in-app-modal-inner" class="pushwoosh-in-app-modal-inner"><iframe id="pushwoosh-in-app-modal-iframe" class="pushwoosh-in-app-modal-iframe"></iframe><button id="pushwoosh-in-app-modal-close-button" class="pushwoosh-in-app-modal-close-button" data-di-id="#pushwoosh-in-app-modal-close-button"></button><div id="pushwoosh-in-app-modal-loader" class="pushwoosh-in-app-modal-loader"></div></div></div></body></html>

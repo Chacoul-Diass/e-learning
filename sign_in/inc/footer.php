@@ -54,7 +54,7 @@
             </form>
         </li><br clear="all">
     </ul>
-    <h3>All Rights Reserve To Armel Kragba Copyright © 2020 Armel Kragba.</h3>
+    <h3>All Rights Reserve To Armel Kragba Copyright © 2020 Scolar Team.</h3>
 </div>
 </body>
 </html>

@@ -1,3 +1,8 @@
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="login.css">
+<script src="https://kit.fontawesome.com/f481d2cc97.js" crossorigin="anonymous"></script>
+
 <div id="footer">
     <ul>
         <li>
@@ -54,7 +59,7 @@
             </form>
         </li><br clear="all">
     </ul>
-    <h3>All Rights Reserve To Armel Kragba Copyright © 2020 Armel Kragba.</h3>
+    <h3>All Rights Reserve To Scolar Team Copyright © 2020 Scolar Team.</h3>
 </div>
 </body>
 </html>

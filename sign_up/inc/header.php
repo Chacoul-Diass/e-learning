@@ -1,9 +1,11 @@
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset "utf-8" />
         <title>E Learning | Home</title>
         <link rel="stylesheet" href="./css/styles.css" />
+        <link rel="stylesheet" href="./css/signup.css">
         <script src="https://kit.fontawesome.com/f481d2cc97.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" type="text/css" href="css/styles_signin_and_signup.css">
         <script type="text/javascript" src="javascript/js_signin_and_signup.js"></script>
@@ -26,7 +28,7 @@
         </div>
     </div>
     <div id="titre">
-        <h2><a href="index.php">E Learning</a></h2>
+        <h2><a href="../index.php">E Learning</a></h2>
     </div>
     <div id="menu">
         <h2>
@@ -49,12 +51,12 @@
     <!-- -------------------------------------    CHACOUL DEBUT    -------------------------------------------- -->
 
     <div class="topnav">
-        <a class="fas fa-user" href="./sign_in/login.php">Connexion</a>  
+        <a class="fas fa-user" href="../sign_in/login.php">Connexion</a>  
     </div>  
 
-    <div class="topnav2">
-        <a class="fas fa-user-plus" href="./sign_up/signup.php">S'inscrire</a>  
-    </div> 
+    <!-- <div class="topnav2">
+        <a class="fas fa-user-plus" href="./user/signup.php">S'inscrire</a>  
+    </div>  -->
 
     <!-- -------------------------------------    CHACOUL FIN    -------------------------------------------- -->
 
